@@ -15,11 +15,14 @@
 
 A collection of helpful JavaScript functions, started by [TogaTech.org](https://togatech.org/) and built by the open-source community
 
+To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.md).
+
 # Table of Contents
 - [Imports](#imports)
 	- [Browser Import](#browser-import)
 	- [Node.js NPM Import](#nodejs-file-import)
 - [Minify](#minify)
+- [Contributing](#contributing)
 - [Methods](#methods)
 	- [General](#general)
 	- [Hex](#hex)
@@ -94,6 +97,9 @@ After UglifyJS 3 has been installed, you can run the following commands in your 
 ```bash
 uglifyjs ./helpful.js -o ./helpful.min.js -c -m --source-map "filename='./helpful.min.js.map',url='helpful.min.js.map'"
 ```
+
+# Contributing
+To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.md) and open a [pull request](https://github.com/TogaTech/helpful.js/pulls). We look forward to reviewing your contributions!
 
 # Methods
 
