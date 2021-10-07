@@ -20,5 +20,16 @@
 		return array;
     }
 
+	helpful.duplicateArray = function(array) {
+		if(array == null) {
+			return [];
+		}
+		let duplicated = [];
+		for(let i = 0; i < array.length; i++) {
+			duplicated.push(array[i]);
+		}
+		return duplicated;
+	}
+
 	return helpful;
 }));
