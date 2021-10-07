@@ -24,32 +24,32 @@ helpful.category.methodName = function(parameters) {
 ```
 
 Documentation format:
-```
+````
 ### methodName
 Description of the method and its purpose
-\`\`\`javascript
+```javascript
 let relevantVariableName = helpful.methodName(exampleParameterFromTestCase); // exampleOutputFromTestCase
-\`\`\`
+```
 **Parameters:**
 - parameterName: paramterType (\`exampleParameterFromTestCase\`)
 
 **Return Type:** returnType (\`exampleOutputFromTestCase\`)
-```
+````
 
 Documentation format for category:
-```
+````
 ## Category
 
 ### category.methodName
 Description of the method and its purpose
-\`\`\`javascript
+```javascript
 let relevantVariableName = helpful.category.methodName(exampleParameterFromTestCase); // exampleOutputFromTestCase
-\`\`\`
+```
 **Parameters:**
 - parameterName: paramterType (\`exampleParameterFromTestCase\`)
 
 **Return Type:** returnType (\`exampleOutputFromTestCase\`)
-```
+````
 
 Test case format:
 ```javascript
