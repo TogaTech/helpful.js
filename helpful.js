@@ -61,5 +61,35 @@
 		return string;
 	}
 
+	/* Modified from https://github.com/TogaTech/tEnvoy  */
+	helpful.hex.convertFromBytes = (bytes) => {
+		if(bytes == null || !(bytes instanceof Uint8Array)) {
+			return "";
+		}
+		let hex = "";
+		for(let i = 0; i < bytes.length; i++) {
+			if(bytes[i].toString(16).length == 0) {
+				hex += "00";
+			} else if(bytes[i].toString(16).length == 1) {
+				hex += "0" + bytes[i].toString(16);
+			} else {
+				hex += bytes[i].toString(16);
+			}
+		}
+		return hex;
+	}
+
+	/* Modified from https://github.com/TogaTech/tEnvoy  */
+	helpful.hex.convertToBytes = (hex) => {
+		if(hex == null) {
+			return new Uint8Array();
+		}
+		let bytes = new Uint8Array(hex.length / 2);
+		for(let i = 0; i < hex.length; i += 2) {
+			bytes[i / 2] = parseInt(hex.substring(i, i + 2), 16);
+		}
+		return bytes;
+	}
+
 	return helpful;
 }));
