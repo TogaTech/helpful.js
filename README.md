@@ -166,3 +166,14 @@ let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115
 - hex: string (`"74657374"`)
 
 **Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+
+### difference
+Difference between two array
+```javascript
+let differenceArray = helpful.difference([2, 1], [2, 3]);
+// => [1]
+```
+**Parameters:**
+- difference: array (`[2, 1], [2, 3]`)
+
+**Return Type:** array (`array [1]`)
