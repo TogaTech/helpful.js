@@ -59,7 +59,11 @@ describe("Tests", function() {
 		it("number: Should do something valid", function() {
 			let expected = expectedValue;
 			let actual = helpful.methodName(parameters);
-			assert.equal(expected, actual); // use assert.deepEqual for comparing arrays or objects, deep equal compares equality of the object and child objects
+			assert.equal(expected, actual);
+			/*
+			use assert.deepEqual for comparing arrays or objects instead of assert.equal,
+			deep equal compares equality of the object and child objects
+			*/
 		});
 ```
 
@@ -71,7 +75,11 @@ describe("Tests", function() {
 		it("number: Should do something valid", function() {
 			let expected = expectedValue;
 			let actual = helpful.category.methodName(parameters);
-			assert.equal(expected, actual); // use assert.deepEqual for comparing arrays or objects, deep equal compares equality of the object and child objects
+			assert.equal(expected, actual);
+			/*
+			use assert.deepEqual for comparing arrays or objects instead of assert.equal,
+			deep equal compares equality of the object and child objects
+			*/
 		});
 ```
 
