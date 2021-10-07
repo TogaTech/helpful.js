@@ -121,10 +121,42 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 
 ## Hex
 
-### convertFromString
+### hex.convertFromString
+Converts a string to hexadecimal
+```javascript
+let hex = helpful.hex.convertFromString("test"); // "74657374"
+```
+**Parameters:**
+- string: string (`"test"`)
 
-### convertToString
+**Return Type:** string (`"74657374"`)
 
-### convertFromBytes
+### hex.convertToString
+Converts hexadecimal to a string
+```javascript
+let string = helpful.hex.convertToString("74657374"); // "test"
+```
+**Parameters:**
+- hex: string (`"74657374"`)
 
-### convertToBytes
+**Return Type:** string (`"test"`)
+
+### hex.convertFromBytes
+Converts a bytes array to hexadecimal
+```javascript
+let hex = helpful.hex.convertFromBytes(new Uint8Array([116, 101, 115, 116])); // "74657374"
+```
+**Parameters:**
+- bytes: Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+
+**Return Type:** string (`"74657374"`)
+
+### hex.convertToBytes
+Converts hexadecimal to a bytes array
+```javascript
+let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115, 116]
+```
+**Parameters:**
+- hex: string (`"74657374"`)
+
+**Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
