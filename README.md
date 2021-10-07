@@ -22,7 +22,7 @@ A collection of helpful JavaScript functions, started by [TogaTech.org](https://
 - [Minify](#minify)
 - [Methods](#methods)
 	- [General](#general)
-	- [Hex Conversions](#hex-conversions)
+	- [Hex](#hex)
 
 # Imports
 
