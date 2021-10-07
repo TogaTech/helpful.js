@@ -9,5 +9,16 @@
 }(typeof self !== 'undefined' ? self : this, function () {
 	const helpful = {};
 
+	helpful.stringToArray = function(string) {
+		if(string == null) {
+			return "";
+		}
+		let array = [];
+		for(let i = 0; i < string.length; i++) {
+			array.push(string[i]);
+		}
+		return array;
+    }
+
 	return helpful;
 }));
