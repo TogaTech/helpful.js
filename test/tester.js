@@ -36,4 +36,23 @@ describe("Tests", function() {
 			assert.deepEqual(expected, actual);
 		});
 	});
+
+	describe("difference", function() {
+		it("1: Should return [1]", function() {
+			let expected = [1];
+			let actual = helpful.difference([2, 1], [2, 3]);
+			assert.equal(...expected, ...actual);
+		});
+		it("2: Should return []", function() {
+			let expected = [];
+			let actual = helpful.difference([], [2, 3]);
+			assert.equal(expected.length, actual.length);
+		});
+		it("3: Should return [10, 20]", function() {
+			let expected = [10, 20];
+			let actual = helpful.difference([10, 20], [2, 1]);
+			assert.equal(expected[0], actual[0]);
+			assert.equal(expected[1], actual[1]);
+		});
+	});
 });
