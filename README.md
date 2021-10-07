@@ -7,10 +7,10 @@
 <h1 align="center">helpful.js</h1>
 <p align="center">
   <a href="https://github.com/TogaTech/helpful.js/actions"><img src="https://img.shields.io/github/workflow/status/TogaTech/helpful.js/Node.js%20CI" alt="Build Status"></a>
-  <a href="https://www.npmjs.com/package/helpful-js"><img src="https://img.shields.io/npm/v/helpful-js.svg?sanitize=true" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/helpful-js"><img src="https://img.shields.io/npm/l/helpful-js.svg?sanitize=true" alt="License"></a>
-  <a href="https://www.npmjs.com/package/helpful-js"><img src="https://img.shields.io/npm/dm/helpful-js.svg?sanitize=true" alt="Monthly Downloads"></a>
-  <a href="https://www.npmjs.com/package/helpful-js"><img src="https://img.shields.io/npm/dt/helpful-js.svg?sanitize=true" alt="Total Downloads"></a>
+  <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/v/@togatech/helpful-js.svg?sanitize=true" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/l/@togatech/helpful-js.svg?sanitize=true" alt="License"></a>
+  <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/dm/@togatech/helpful-js.svg?sanitize=true" alt="Monthly Downloads"></a>
+  <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/dt/@togatech/helpful-js.svg?sanitize=true" alt="Total Downloads"></a>
 </p>
 
 A collection of helpful JavaScript functions, started by [TogaTech.org](https://togatech.org/) and built by the open-source community
@@ -44,7 +44,7 @@ For the browser, only `./helpful.js` or `./helpful.min.js` is required and has a
 ## Node.js NPM Import
 Helpful.js is available through the NPM registry. To install helpful.js, use the following command in the terminal:
 ```bash
-npm install helpful-js
+npm install @togatech/helpful-js
 ```
 Make sure to run the test cases to ensure that helpful.js works properly:
 ```bash
@@ -52,14 +52,14 @@ npm test
 ```
 To include helpful.js in your code:
 ```javascript
-const helpful = require("helpful-js");
+const helpful = require("@togatech/helpful-js");
 helpful.stringToArray("hello");
 helpful.duplicateArray([0, 1, 1, 3, 5]);
 ...
 ```
 To include specific helpful.js methods in your code:
 ```javascript
-const { stringToArray, duplicateArray } = require("helpful-js");
+const { stringToArray, duplicateArray } = require("@togatech/helpful-js");
 stringToArray("hello");
 duplicateArray([0, 1, 1, 3, 5]);
 ...
@@ -68,7 +68,7 @@ duplicateArray([0, 1, 1, 3, 5]);
 ## Node.js File Import
 For node.js file import, place the `./helpful.js` or `./helpful.min.js` file in your project directory.
 
-Make sure to run the test cases to ensure that helpful-js works properly (you will need to add the `./test` folder to the project directory):
+Make sure to run the test cases to ensure that helpful.js works properly (you will need to add the `./test` folder to the project directory):
 ```bash
 npm install mocha --save-dev
 mocha
