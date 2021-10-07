@@ -100,8 +100,24 @@ uglifyjs ./helpful.js -o ./helpful.min.js -c -m --source-map "filename='./helpfu
 ### General
 
 #### stringToArray
+Converts a string into an array of individual characters
+```javascript
+let array = helpful.stringToArray("test"); // ["t", "e", "s", "t"]
+```
+**Parameters:**
+- string: string (`"test"`)
+
+**Return Type:** Array (`["t", "e", "s", "t"]`)
 
 #### duplicateArray
+Duplicates an array by creating a new array and transferring all the elements from the first array
+```javascript
+let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array (`["t", "e", "s", "t"]`)
 
 ### Hex
 
