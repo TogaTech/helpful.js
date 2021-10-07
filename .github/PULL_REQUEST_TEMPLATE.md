@@ -1,6 +1,7 @@
 <!-- Thank you for taking the time to work on a Pull Request for this project! -->
 <!-- To ensure your PR is dealt with swiftly please check the following: -->
 - [ ] My submission is formatted according to the guidelines in the [contributing guide](/CONTRIBUTING.md)
+- [ ] My submission follows the [code style guidelines](/CONTRIBUTING.md#code-style)
 - [ ] My addition is added to the bottom of a category (for general methods, this location starts before the categories start)
 - [ ] My submission contains no more than 10 new methods
 - [ ] My submission has relevant documentation with a useful description, code example, parameter information, and return type (formatted like the rest of the documentation), and this documentation is added at the bottom of a category

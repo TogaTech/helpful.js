@@ -18,7 +18,7 @@
 			array.push(string[i]);
 		}
 		return array;
-    }
+	}
 
 	helpful.duplicateArray = function(array) {
 		if(array == null) {

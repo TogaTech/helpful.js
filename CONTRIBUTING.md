@@ -4,7 +4,7 @@
 
 All methods should be relatively short and not rely on external libraries/modules. This library should be standalone and not bulky in size.
 
-Method format:
+**Method format:**
 ```javascript
 ...
 helpful.methodName = function(parameters) {
@@ -13,7 +13,7 @@ helpful.methodName = function(parameters) {
 }
 ```
 
-Method format for category:
+**Method format for category:**
 ```javascript
 helpful.category = {};
 ...
@@ -23,7 +23,7 @@ helpful.category.methodName = function(parameters) {
 }
 ```
 
-Documentation format:
+**Documentation format:**
 ````
 ### methodName
 Description of the method and its purpose
@@ -36,7 +36,7 @@ let relevantVariableName = helpful.methodName(exampleParameterFromTestCase); // 
 **Return Type:** returnType (`exampleOutputFromTestCase`)
 ````
 
-Documentation format for category:
+**Documentation format for category:**
 ````
 ## Category
 
@@ -51,7 +51,7 @@ let relevantVariableName = helpful.category.methodName(exampleParameterFromTestC
 **Return Type:** returnType (`exampleOutputFromTestCase`)
 ````
 
-Test case format:
+**Test case format:**
 ```javascript
 describe("Tests", function() {
 	describe("General", function() {
@@ -67,7 +67,7 @@ describe("Tests", function() {
 		});
 ```
 
-Test case format for category:
+**Test case format for category:**
 ```javascript
 describe("Tests", function() {
 	describe("Category", function() {
@@ -82,6 +82,20 @@ describe("Tests", function() {
 			*/
 		});
 ```
+
+**Code style:**
+- Please use tabs to ensure consistency and accessibility across the codebase.
+- There should be no spaces between a function name and the opening parenthesis.
+- There should be one space between the function closing parenthesis and the opening curly brace.
+- The opening curly brace should be on the same line as the function declaration/top of the block.
+- Any lines of code that are long enough to require excessive sideways scrolling should be split into multiple lines.
+- There should be one space between a term and operator (for example, `1 + 2` or `let x = 0;`).
+- There should be one space after a comma (for example, `[1, 2, 3]`).
+- Please use function syntax (`function name() {}`) and not arrow syntax (do not use `const name = () => {}`) to ensure consistency and compatibility across the codebase.
+- Add a semicolon to the end of every statement (for example, `let x = 0;`).
+- Use size-efficient assignment operators (for example, use `x += 1` instead of `x = x + 1`).
+- Ensure that codeblocks are properly indented using a tab.
+- Make sure to credit the source of any code you are using (if applicable).
 
 After you've created a branch on your fork with your changes, it's time to [make a pull request][pr-link]. 
 
