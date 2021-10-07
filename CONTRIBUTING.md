@@ -31,9 +31,9 @@ Description of the method and its purpose
 let relevantVariableName = helpful.methodName(exampleParameterFromTestCase); // exampleOutputFromTestCase
 ```
 **Parameters:**
-- parameterName: paramterType (\`exampleParameterFromTestCase\`)
+- parameterName: paramterType (`exampleParameterFromTestCase`)
 
-**Return Type:** returnType (\`exampleOutputFromTestCase\`)
+**Return Type:** returnType (`exampleOutputFromTestCase`)
 ````
 
 Documentation format for category:
@@ -46,9 +46,9 @@ Description of the method and its purpose
 let relevantVariableName = helpful.category.methodName(exampleParameterFromTestCase); // exampleOutputFromTestCase
 ```
 **Parameters:**
-- parameterName: paramterType (\`exampleParameterFromTestCase\`)
+- parameterName: paramterType (`exampleParameterFromTestCase`)
 
-**Return Type:** returnType (\`exampleOutputFromTestCase\`)
+**Return Type:** returnType (`exampleOutputFromTestCase`)
 ````
 
 Test case format:
