@@ -1,0 +1,28 @@
+{
+  "name": "helpful-js",
+  "version": "1.0.0",
+  "description": "A collection of helpful JavaScript functions, started by TogaTech.org and built by the open-source community",
+  "main": "helpful.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TogaTech/helpful.js.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "TogaTech",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/TogaTech/helpful.js/issues"
+  },
+  "homepage": "https://github.com/TogaTech/helpful.js#readme",
+  "devDependencies": {
+    "mocha": "^9.1.2"
+  }
+}
