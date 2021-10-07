@@ -24,9 +24,9 @@ A collection of helpful JavaScript functions, started by [TogaTech.org](https://
 	- [General](#general)
 	- [Hex Conversions](#hex-conversions)
 
-## Imports
+# Imports
 
-### Browser Import
+## Browser Import
 For the browser, only `./helpful.js` or `./helpful.min.js` is required and has all dependencies bundled inside the single file. We recommend including `./helpful.min.js.map` in the same directory as `./helpful.min.js`, which allows a browser to reconstruct the original unminified file in the debugger.
 
 ```html
@@ -38,7 +38,7 @@ For the browser, only `./helpful.js` or `./helpful.min.js` is required and has a
 </script>
 ```
 
-### Node.js NPM Import
+## Node.js NPM Import
 Helpful.js is available through the NPM registry. To install helpful.js, use the following command in the terminal:
 ```bash
 npm install helpful-js
@@ -62,7 +62,7 @@ duplicateArray([0, 1, 1, 3, 5]);
 ...
 ```
 
-### Node.js File Import
+## Node.js File Import
 For node.js file import, place the `./helpful.js` or `./helpful.min.js` file in your project directory.
 
 Make sure to run the test cases to ensure that helpful-js works properly (you will need to add the `./test` folder to the project directory):
@@ -85,7 +85,7 @@ duplicateArray([0, 1, 1, 3, 5]);
 ...
 ```
 
-## Minify
+# Minify
 If you would like to minify the code yourself instead of using the provided `tenvoy.min.js` (and optional `tenvoy.min.js.map`), you can use [UglifyJS 3](https://github.com/mishoo/UglifyJS) to minifiy the code yourself.
 
 To install UglifyJS 3 as a command line app through NPM, run `npm install uglify-js -g`.
@@ -95,11 +95,11 @@ After UglifyJS 3 has been installed, you can run the following commands in your 
 uglifyjs ./helpful.js -o ./helpful.min.js -c -m --source-map "filename='./helpful.min.js.map',url='helpful.min.js.map'"
 ```
 
-## Methods
+# Methods
 
-### General
+## General
 
-#### stringToArray
+### stringToArray
 Converts a string into an array of individual characters
 ```javascript
 let array = helpful.stringToArray("test"); // ["t", "e", "s", "t"]
@@ -109,7 +109,7 @@ let array = helpful.stringToArray("test"); // ["t", "e", "s", "t"]
 
 **Return Type:** Array (`["t", "e", "s", "t"]`)
 
-#### duplicateArray
+### duplicateArray
 Duplicates an array by creating a new array and transferring all the elements from the first array
 ```javascript
 let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"]
@@ -119,12 +119,12 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 
 **Return Type:** Array (`["t", "e", "s", "t"]`)
 
-### Hex
+## Hex
 
-#### convertFromString
+### convertFromString
 
-#### convertToString
+### convertToString
 
-#### convertFromBytes
+### convertFromBytes
 
-#### convertToBytes
+### convertToBytes
