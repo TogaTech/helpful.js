@@ -8,7 +8,7 @@
 	}
 }(typeof self !== 'undefined' ? self : this, function () {
 	const helpful = {};
-	console.log("testing changes");
+	console.log("testing");
 
 	helpful.stringToArray = function(string) {
 		if(string == null) {
