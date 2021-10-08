@@ -178,4 +178,4 @@ let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]);
 - array1: Array (`[2, 1]`)
 - array2: Array (`[2, 3]`)
 
-**Return Type:** array (`Array ([1])`)
+**Return Type:** Array (`Array ([1])`)
