@@ -126,6 +126,19 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 
 **Return Type:** Array (`["t", "e", "s", "t"]`)
 
+
+### differenceOfArrays
+Difference between two arrays
+```javascript
+let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); 
+// [1]
+```
+**Parameters:**
+- array1: Array (`[2, 1]`)
+- array2: Array (`[2, 3]`)
+
+**Return Type:** Array (`Array ([1])`)
+
 ## Hex
 
 ### hex.convertFromString
@@ -167,15 +180,3 @@ let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115
 - hex: string (`"74657374"`)
 
 **Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
-
-### differenceOfArrays
-Difference between two arrays
-```javascript
-let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); 
-// [1]
-```
-**Parameters:**
-- array1: Array (`[2, 1]`)
-- array2: Array (`[2, 3]`)
-
-**Return Type:** Array (`Array ([1])`)
