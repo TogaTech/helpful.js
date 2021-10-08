@@ -26,6 +26,7 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 - [Methods](#methods)
 	- [General](#general)
 	- [Hex](#hex)
+  - [DifferenceOfArrays](#differenceOfArrays)
 
 # Imports
 
@@ -167,13 +168,14 @@ let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115
 
 **Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
 
-### difference
-Difference between two array
+### differenceOfArrays
+Difference between two arrays
 ```javascript
-let differenceArray = helpful.difference([2, 1], [2, 3]);
-// => [1]
+let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); 
+// [1]
 ```
 **Parameters:**
-- difference: array (`[2, 1], [2, 3]`)
+- array1: Array (`[2, 1]`)
+- array2: Array (`[2, 3]`)
 
-**Return Type:** array (`array [1]`)
+**Return Type:** array (``Array ([1])`)
