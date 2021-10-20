@@ -31,6 +31,27 @@
 		return duplicated;
 	}
 
+	helpful.differenceOfArrays = (array1, array2) => {
+		if(array1 == null || array2 == null) {
+			return [];
+		}
+		return array1.filter(value => !array2.includes(value));
+	}
+
+	helpful.sumOfArrays = (array1, array2) => {
+		if(array1 == null || array2 == null) {
+			return [];
+		}
+		let sum = [];
+		for(let i = 0; i < array1.length; i++) {
+			sum.push(array1[i]);
+		}
+		for(let i = 0; i < array2.length; i++) {
+			sum.push(array2[i]);
+		}
+		return sum;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
@@ -89,10 +110,6 @@
 			bytes[i / 2] = parseInt(hex.substring(i, i + 2), 16);
 		}
 		return bytes;
-	}
-
-	helpful.differenceOfArrays = (array1, array2) => {
-		return array1.filter(value => !array2.includes(value));
 	}
 
 	return helpful;
