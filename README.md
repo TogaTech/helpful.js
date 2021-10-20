@@ -138,6 +138,17 @@ let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
 
 **Return Type:** Array (`Array [1]`)
 
+### sumOfArrays
+Sum of two arrays
+```javascript
+let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // [1, 2, 3, 4]
+```
+**Parameters:**
+- array1: Array (`[1, 2]`)
+- array2: Array (`[3, 4]`)
+
+**Return Type:** Array (`Array [1, 2, 3, 4]`)
+
 ## Hex
 
 ### hex.convertFromString
