@@ -1,6 +1,6 @@
 {
   "name": "@togatech/helpful-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of helpful JavaScript functions, started by TogaTech.org and built by the open-source community",
   "main": "helpful.js",
   "directories": {
