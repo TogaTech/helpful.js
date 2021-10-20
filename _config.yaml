@@ -1,13 +1,13 @@
 plugins:
-	- jekyll-relative-links
+    jekyll-relative-links
 relative_links:
-	enabled: true
-	collections: true
+    enabled: true
+    collections: true
 include:
-	- README.md
-	- CONTRIBUTING.md
-	- LICENSE
-	- COPYING.md
-	- helpful.js
-	- helpful.min.js
-	- helpful.min.js.map
+    - README.md
+    - CONTRIBUTING.md
+    - LICENSE
+    - COPYING.md
+    - helpful.js
+    - helpful.min.js
+    - helpful.min.js.map
