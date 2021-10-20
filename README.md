@@ -128,7 +128,7 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 
 
 ### differenceOfArrays
-Difference between two arrays
+Finds the difference between two arrays (any identical elements in the second array are removed from the first array)
 ```javascript
 let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
 ```
@@ -139,7 +139,7 @@ let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
 **Return Type:** Array (`Array [1]`)
 
 ### sumOfArrays
-Sum of two arrays
+Finds the sum of two arrays (the two arrays are combined)
 ```javascript
 let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // [1, 2, 3, 4]
 ```
