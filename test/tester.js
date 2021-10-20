@@ -28,7 +28,7 @@ describe("Tests", function() {
 			let actual = helpful.differenceOfArrays([10, 20], [2, 1]);
 			assert.deepEqual(expected, actual);
 		});
-		it("5: Should find the sum of two arrays", function() {
+		it("6: Should find the sum of two arrays", function() {
 			let expected = [1, 2, 3, 4];
 			let actual = helpful.sumOfArrays([1, 2], [3, 4]);
 			assert.deepEqual(expected, actual);
