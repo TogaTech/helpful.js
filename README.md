@@ -26,7 +26,8 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 - [Methods](#methods)
 	- [General](#general)
 	- [Hex](#hex)
-  - [DifferenceOfArrays](#differenceOfArrays)
+	- [differenceOfArrays](#differenceOfArrays)
+	- [sumOfArrays](#sumOfArrays)
 
 # Imports
 
