@@ -13,6 +13,21 @@ describe("Tests", function() {
 			let actual = helpful.duplicateArray(expected);
 			assert.deepEqual(expected, actual);
 		});
+		it("3: Should find the difference of two arrays", function() {
+			let expected = [1];
+			let actual = helpful.differenceOfArrays([2, 1], [2, 3]);
+			assert.deepEqual(expected, actual);
+		});
+		it("4: Should find the difference of two arrays", function() {
+			let expected = [];
+			let actual = helpful.differenceOfArrays([], [2, 3]);
+			assert.deepEqual(expected, actual);
+		});
+		it("5: Should find the difference of two arrays", function() {
+			let expected = [10, 20];
+			let actual = helpful.differenceOfArrays([10, 20], [2, 1]);
+			assert.deepEqual(expected, actual);
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {
