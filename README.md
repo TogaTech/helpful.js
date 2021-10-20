@@ -130,14 +130,13 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 ### differenceOfArrays
 Difference between two arrays
 ```javascript
-let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); 
-// [1]
+let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
 ```
 **Parameters:**
 - array1: Array (`[2, 1]`)
 - array2: Array (`[2, 3]`)
 
-**Return Type:** Array (`Array ([1])`)
+**Return Type:** Array (`Array [1]`)
 
 ## Hex
 
