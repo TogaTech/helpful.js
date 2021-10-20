@@ -7,6 +7,3 @@ include:
     - README.md
     - CONTRIBUTING.md
     - LICENSE
-    - helpful.js
-    - helpful.min.js
-    - helpful.min.js.map
