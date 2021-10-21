@@ -149,17 +149,16 @@ let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // [1, 2, 3, 4]
 **Return Type:** Array (`Array [1, 2, 3, 4]`)
 
 ### capitalize
-Capitalize word(s)
+Capitalizes the first letter of every word
 ```javascript
-  // one word
-  let capitalizedWord = 'heLLo'; // Hello
-  // sentence
-  let capitalizedSentence = 'hello javaScript world!'; // Hello Javascript World!
+let capitalizedWord = helpful.capitalize('heLLo'); // Hello
+let capitalizedSentence = helpful.capitalize('hello javaScript world!'); // Hello Javascript World!
 ```
 **Parameters:**
-- str: string ("hello")
+- string: string (`"heLLo"`)
 
 **Return Type:** string (`"Hello"`)
+
 ## Hex
 
 ### hex.convertFromString
