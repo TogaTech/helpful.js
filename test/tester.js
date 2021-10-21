@@ -33,6 +33,16 @@ describe("Tests", function() {
 			let actual = helpful.sumOfArrays([1, 2], [3, 4]);
 			assert.deepEqual(expected, actual);
 		});
+		it("7: Should render capitalized word (single word)", function() {
+			let expected = "Hello";
+			let actual = helpful.capitalize('heLLo');
+			assert.equal(expected, actual);
+		});
+		it("8: Should render capitalized word (multiple words)", function() {
+			let expected = "Hello Javascript World";
+			let actual = helpful.capitalize('hello javaScript world');
+			assert.equal(expected, actual);
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {

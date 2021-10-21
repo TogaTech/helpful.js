@@ -52,6 +52,24 @@
 		return sum;
 	}
 
+	helpful.capitalize = (str) => {
+    if(typeof str !== 'string') return str;
+
+    if(str.split(' ').length > 1) {
+      const result = str.split(' ').reduce((acc, value) => {
+        const [firstLetter, ...rest] = value;
+        acc += `${firstLetter.toUpperCase()}${rest.join('').toLowerCase()} `;
+
+        return acc;
+      }, '');
+
+      return result.trimEnd();
+    }
+
+    const [firstLetter, ...rest] = str;
+    return `${firstLetter.toUpperCase()}${rest.join('').toLowerCase()}`;
+  };
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
