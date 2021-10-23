@@ -72,6 +72,19 @@
 		return `${firstLetter.toUpperCase()}${rest.join("").toLowerCase()}`;
 	};
 
+	helpful.mergeArrays = function(array1, array2) {
+		if(array1 == null || array2 == null) {
+			return [];
+		}
+		const clone = array1.slice();
+		for(let i = 0; i < array2.length; i++) {
+			if(!clone.includes(array2[i])) {
+				clone.push(array2[i]);
+			}
+		}
+		return clone;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */

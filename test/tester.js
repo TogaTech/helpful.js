@@ -43,6 +43,11 @@ describe("Tests", function() {
 			let actual = helpful.capitalize('hello javaScript world');
 			assert.equal(expected, actual);
 		});
+		it("9: Should merge the elements of two arrays", function() {
+			let expected = [2, 4, 6, 8, 10, 1];
+			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
+			assert.deepEqual(expected, actual);
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {
