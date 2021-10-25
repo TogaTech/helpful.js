@@ -31,14 +31,14 @@
 		return duplicated;
 	}
 
-	helpful.differenceOfArrays = (array1, array2) => {
+	helpful.differenceOfArrays = function(array1, array2) {
 		if(array1 == null || array2 == null) {
 			return [];
 		}
 		return array1.filter(value => !array2.includes(value));
 	}
 
-	helpful.sumOfArrays = (array1, array2) => {
+	helpful.sumOfArrays = function(array1, array2) {
 		if(array1 == null || array2 == null) {
 			return [];
 		}
@@ -52,7 +52,7 @@
 		return sum;
 	}
 
-	helpful.capitalize = (string) => {
+	helpful.capitalize = function(string) {
 		if(string == null) {
 			return "";
 		}
@@ -88,7 +88,7 @@
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertFromString = (string) => {
+	helpful.hex.convertFromString = function(string) {
 		if(string == null) {
 			return "";
 		}
@@ -104,7 +104,7 @@
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertToString = (hex) => {
+	helpful.hex.convertToString = function(hex) {
 		if(hex == null) {
 			return "";
 		}
@@ -116,7 +116,7 @@
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertFromBytes = (bytes) => {
+	helpful.hex.convertFromBytes = function(bytes) {
 		if(bytes == null || !(bytes instanceof Uint8Array)) {
 			return "";
 		}
@@ -134,7 +134,7 @@
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertToBytes = (hex) => {
+	helpful.hex.convertToBytes = function(hex) {
 		if(hex == null) {
 			return new Uint8Array();
 		}
