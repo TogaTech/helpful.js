@@ -6,7 +6,7 @@
 - [ ] My submission contains no more than 10 new methods
 - [ ] My submission has relevant documentation with a useful description, code example, parameter information, and return type (formatted like the rest of the documentation), and this documentation is added at the bottom of a category
 - [ ] My documentation for each method does not have more than 2500 characters (the recommended size of documentation for a single method is 250-1000 characters, the 2500 character limit per method is for more complex functions)
-- [ ] My code and documentation is gramatically and syntatically correct and is written in English only
+- [ ] My code and documentation are grammatically and syntactically correct and are written in English only
 - [ ] My submission has at least 1 test case for each method, added to the relevant testing category at the bottom of a category
 - [ ] My submission passes all test cases (`npm test`)
 - [ ] I have ONLY edited `./helpful.js`, `./test/tester.js`, and/or `./README.md` (exceptions can be made in rare circumstances) 
