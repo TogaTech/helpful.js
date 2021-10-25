@@ -162,7 +162,7 @@ let capitalizedSentence = helpful.capitalize('hello javaScript world!'); // Hell
 **Return Type:** string (`"Hello"`)
 
 ### mergeArrays
-Merge the second array into the first one (skip duplicated values)
+Merges the second array into the first one (skip duplicated values)
 ```javascript
 let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
 ```
