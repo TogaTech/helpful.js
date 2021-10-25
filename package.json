@@ -17,11 +17,11 @@
     "javascript"
   ],
   "author": "TogaTech",
-  "license": "GPL-3.0-or-later",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/TogaTech/helpful.js/issues"
   },
-  "homepage": "https://github.com/TogaTech/helpful.js#readme",
+  "homepage": "https://helpful.js.org/",
   "devDependencies": {
     "mocha": "^9.1.2"
   },

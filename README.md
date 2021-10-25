@@ -17,6 +17,8 @@ A collection of helpful JavaScript functions, started by [TogaTech.org](https://
 
 To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.md).
 
+Website: [helpful.js.org](https://helpful.js.org/)
+
 # Table of Contents
 - [Imports](#imports)
 	- [Browser Import](#browser-import)
