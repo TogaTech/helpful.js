@@ -172,6 +172,16 @@ let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
 
 **Return Type:** Array (`Array [1, 2, 3, 4]`)
 
+### fillArray
+Replaces each element of the given array with the given value
+```javascript
+let array = helpful.fillArray(["t", "e", "s", "t"], 1); // [1, 1, 1, 1]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array (`[1, 1, 1, 1]`)
+
 ## Hex
 
 ### hex.convertFromString
