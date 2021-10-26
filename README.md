@@ -172,6 +172,16 @@ let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
 
 **Return Type:** Array (`Array [1, 2, 3, 4]`)
 
+### average
+Find the average of an array
+```javascript
+let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
+```
+**Parameters:**
+- array: Array (`[1, 2, 4, 4]`)
+
+**Return Type:** Number (`2.75`)
+
 ## Hex
 
 ### hex.convertFromString
