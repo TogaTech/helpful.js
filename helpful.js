@@ -84,6 +84,18 @@
 		}
 		return clone;
 	}
+	
+	helpful.average = function(array) {
+		if(array == null ) {
+			return [];
+		}
+		let sum = 0;
+		for(let i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		let average = sum / array.length ;
+		return average;
+	}
 
 	helpful.hex = {};
 

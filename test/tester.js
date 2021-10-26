@@ -48,6 +48,11 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
+		it("10: Should calculate the average of the array",function(){
+			let expected = 2.75;
+			let actual = helpful.average([1, 2, 4, 4]);
+			assert.equal(expected, actual);
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {
