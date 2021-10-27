@@ -5,6 +5,7 @@
 </p>
 
 <h1 align="center">helpful.js</h1>
+<h3 align="center"><a href="https://helpful.js.org/">helpful.js.org</a></h3>
 <p align="center">
   <a href="https://github.com/TogaTech/helpful.js/actions"><img src="https://img.shields.io/github/workflow/status/TogaTech/helpful.js/Node.js%20CI" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/v/@togatech/helpful-js.svg?sanitize=true" alt="Version"></a>
@@ -16,8 +17,6 @@
 A collection of helpful JavaScript functions, started by [TogaTech.org](https://togatech.org/) and built by the open-source community
 
 To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.md).
-
-Website: [helpful.js.org](https://helpful.js.org/)
 
 # Table of Contents
 - [Imports](#imports)
@@ -130,7 +129,9 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // Array(4) ["t", "e",
 ### differenceOfArrays
 Finds the difference between two arrays (any identical elements in the second array are removed from the first array)
 ```javascript
-let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // Array(1) [1]
+let differenceArray1 = helpful.differenceOfArrays([2, 1], [2, 3]); // Array(1) [1]
+let differenceArray2 = helpful.differenceOfArrays([], [2, 3]); // Array(0) []
+let differenceArray3 = helpful.differenceOfArrays([10, 20], [2, 1]); // Array(2) [10, 20]
 ```
 **Parameters:**
 - array1: Array (`[2, 1]`)
@@ -196,7 +197,11 @@ Pad a string adding characters on the left and right side of it until the string
 Padding is added evenly on both sides, but if there is an odd number of padding characters, the extra
 padding character is added to the end of the string.
 ```javascript
-let string = helpful.pad("test", 8, "*"); // "**test**"
+let padded1 = helpful.pad("test", 8, "*"); // "**test**"
+let padded2 = helpful.pad("test", 8); // "  test  "
+let padded3 = helpful.pad("test", 9, "*"); // "**test***"
+let padded4 = helpful.pad("test", 11, "_a_-"); // "_a_test_a_-"
+let padded5 = helpful.pad("test", 10, "_a_-"); // "_a_test_a_"
 ```
 **Parameters:**
 - string: string (`"test"`)
@@ -208,7 +213,9 @@ let string = helpful.pad("test", 8, "*"); // "**test**"
 ### padStart
 Pad a string adding characters on the left side of it until the string reach a certain size.
 ```javascript
-let string = helpful.padStart("test", 6, "*"); // "**test"
+let padded1 = helpful.padStart("test", 6, "*"); // "**test"
+let padded2 = helpful.padStart("test", 6); // "  test"
+let padded3 = helpful.padStart("test", 6, "_a_-"); // "_atest"
 ```
 **Parameters:**
 - string: string (`"test"`)
@@ -220,7 +227,9 @@ let string = helpful.padStart("test", 6, "*"); // "**test"
 ### padEnd
 Pad a string adding characters on the right side of it until the string reach a certain size.
 ```javascript
-let string = helpful.padEnd("test", 6, "*"); // "test**"
+let padded1 = helpful.padEnd("test", 6, "*"); // "test**"
+let padded2 = helpful.padEnd("test", 6); // "test  "
+let padded3 = helpful.padEnd("test", 6, "_a_-"); // "test_a"
 ```
 **Parameters:**
 - string: string (`"test"`)
@@ -232,7 +241,8 @@ let string = helpful.padEnd("test", 6, "*"); // "test**"
 ### chunkArray
 Split an array into n-sized chunks
 ```javascript
-let chunkedArray = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3); // Array(2) [[1, 2, 3], [4, 5, 6]]
+let chunkedArray1 = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3); // Array(2) [[1, 2, 3], [4, 5, 6]]
+let chunkedArray2 = helpful.chunkArray([1, 2, 3, 4, 5], 3); // Array(2) [[1, 2, 3], [4, 5]]
 ```
 **Parameters:**
 - array: Array (`[1, 2, 3, 4, 5, 6]`)

@@ -116,14 +116,28 @@ describe("Tests", function() {
 		i++;
 		it(`${i}: padStart - Should pad only the beginning of the string`, function () {
 			let expected = "**test";
-			let actual = helpful.padStart("test", 6, "**test");
+			let actual = helpful.padStart("test", 6, "*");
+			assert.equal(expected, actual);
+		});
+		
+		i++;
+		it(`${i}: padStart - Should cut the end of the padded characters if too long`, function () {
+			let expected = "_atest";
+			let actual = helpful.padStart("test", 6, "_a_-");
 			assert.equal(expected, actual);
 		});
 		
 		i++;
 		it(`${i}: padEnd - Should pad only the end of the string`, function () {
 			let expected = "test**";
-			let actual = helpful.padEnd("test", 6, "**test");
+			let actual = helpful.padEnd("test", 6, "*");
+			assert.equal(expected, actual);
+		});
+		
+		i++;
+		it(`${i}: padEnd - Should cut the end of the padded characters if too long`, function () {
+			let expected = "test_a";
+			let actual = helpful.padEnd("test", 6, "_a_-");
 			assert.equal(expected, actual);
 		});
 		
