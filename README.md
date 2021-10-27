@@ -193,9 +193,10 @@ let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "
 **Return Type:** Array (`Array(4) ["t", "s", "e", "t"]`)
 
 ### pad
-Pad a string adding characters on the left and right side of it until the string reach a certain size.
+Pads a string by adding characters on both sides until the string reaches a certain size
+
 Padding is added evenly on both sides, but if there is an odd number of padding characters, the extra
-padding character is added to the end of the string.
+padding character is added to the end of the string. If the padding character is too large, it will be truncated.
 ```javascript
 let padded1 = helpful.pad("test", 8, "*"); // "**test**"
 let padded2 = helpful.pad("test", 8); // "  test  "
@@ -211,7 +212,9 @@ let padded5 = helpful.pad("test", 10, "_a_-"); // "_a_test_a_"
 **Return Type:** string (`"**test**"`)
 
 ### padStart
-Pad a string adding characters on the left side of it until the string reach a certain size.
+Pad a string by adding characters to the start until the string reaches a certain size
+
+If the padding character is too large, it will be truncated.
 ```javascript
 let padded1 = helpful.padStart("test", 6, "*"); // "**test"
 let padded2 = helpful.padStart("test", 6); // "  test"
@@ -225,7 +228,9 @@ let padded3 = helpful.padStart("test", 6, "_a_-"); // "_atest"
 **Return Type:** string (`"**test"`)
 
 ### padEnd
-Pad a string adding characters on the right side of it until the string reach a certain size.
+Pads a string by adding characters to the end until the string reach a certain size
+
+If the padding character is too large, it will be truncated.
 ```javascript
 let padded1 = helpful.padEnd("test", 6, "*"); // "test**"
 let padded2 = helpful.padEnd("test", 6); // "test  "
@@ -239,7 +244,7 @@ let padded3 = helpful.padEnd("test", 6, "_a_-"); // "test_a"
 **Return Type:** string (`"test**"`)
 
 ### chunkArray
-Split an array into n-sized chunks
+Splits an array into n-sized chunks
 ```javascript
 let chunkedArray1 = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3); // Array(2) [[1, 2, 3], [4, 5, 6]]
 let chunkedArray2 = helpful.chunkArray([1, 2, 3, 4, 5], 3); // Array(2) [[1, 2, 3], [4, 5]]
@@ -251,14 +256,14 @@ let chunkedArray2 = helpful.chunkArray([1, 2, 3, 4, 5], 3); // Array(2) [[1, 2, 
 **Return Type:** Array (`Array(2) [[1, 2, 3], [4, 5, 6]]`)
 
 ### average
-Find the average of an array
+Finds the average of an array
 ```javascript
 let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
 ```
 **Parameters:**
 - array: Array (`[1, 2, 4, 4]`)
 
-**Return Type:** Number (`2.75`)
+**Return Type:** number (`2.75`)
 
 ## Hex
 
