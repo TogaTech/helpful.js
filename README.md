@@ -200,10 +200,10 @@ let string = helpful.pad("test", 8, "*"); // "**test**"
 ```
 **Parameters:**
 - string: string (`"test"`)
-- number: size (`8`)
-- string: delimiter (`"*"`)
+- size: number (`8`)
+- delimiter: string (`"*"`)
 
-**Return Type:** String (`"**test**"`)
+**Return Type:** string (`"**test**"`)
 
 ### padStart
 Pad a string adding characters on the left side of it until the string reach a certain size.
@@ -212,10 +212,10 @@ let string = helpful.padStart("test", 6, "*"); // "**test"
 ```
 **Parameters:**
 - string: string (`"test"`)
-- number: size (`6`)
-- string: delimiter (`"*"`)
+- size: number (`6`)
+- delimiter: string (`"*"`)
 
-**Return Type:** String (`"**test"`)
+**Return Type:** string (`"**test"`)
 
 ### padEnd
 Pad a string adding characters on the right side of it until the string reach a certain size.
@@ -224,10 +224,10 @@ let string = helpful.padEnd("test", 6, "*"); // "test**"
 ```
 **Parameters:**
 - string: string (`"test"`)
-- number: size (`6`)
-- string: delimiter (`"*"`)
+- size: number (`6`)
+- delimiter: string (`"*"`)
 
-**Return Type:** String (`"test**"`)
+**Return Type:** string (`"test**"`)
 
 ## Hex
 
