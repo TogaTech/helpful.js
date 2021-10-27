@@ -86,7 +86,9 @@
 	}
 
 	helpful.shuffleArray = function(array) {
-		if(array == null) return [];
+		if(array == null) {
+			return [];
+		}
 		let result = [];
 		let copy = array.slice();
 		while( copy.length ){
@@ -96,7 +98,9 @@
 	}
 
 	helpful.reverseArray = function(array) {
-		if(array == null) return [];
+		if(array == null) {
+			return [];
+		}
 		let result = [];
 		let copy = array.slice();
 		while( copy.length ){
