@@ -105,9 +105,19 @@
 		return result;
 	}
 
+	function getPadString(delimiter, size) {
+		return delimiter.repeat(size / delimiter.length) + delimiter.substring(0, size % delimiter.length);
+	}
+
 	helpful.pad = function(string, size, delimiter = " ") {
-		if (string === null) {
+		if (string == null) {
 			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
 		}
 		const availableChars = size - string.length;
 		if (availableChars <= 0) {
@@ -119,8 +129,14 @@
 	}
 
 	helpful.padStart = function(string, size, delimiter = " ") {
-		if (string === null) {
+		if (string == null) {
 			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
 		}
 		const availableChars = size - string.length;
 		if (availableChars <= 0) {
@@ -131,8 +147,14 @@
 	}
 
 	helpful.padEnd = function(string, size, delimiter = " ") {
-		if (string === null) {
+		if (string == null) {
 			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
 		}
 		const availableChars = size - string.length;
 		if (availableChars <= 0) {
@@ -142,14 +164,12 @@
 		return `${string}${pad}`;
 	}
 
-	const getPadString = (delimiter, size) => {
-		return delimiter.repeat(size / delimiter.length)
-			+ delimiter.substring(0, size % delimiter.length);
-	}
-
 	helpful.chunkArray = function(array, n) {
 		if(array == null) {
 			return [];
+		}
+		if(n == null) {
+			return array;
 		}
 		const res = [];
 		const numberOfChunks = Math.ceil(array.length / n);
