@@ -126,13 +126,19 @@ describe("Tests", function() {
 			let actual = helpful.padEnd("test", 6, "**test");
 			assert.equal(expected, actual);
 		});
-		it("18: Should split array into n-sized chunks", function() {
+		
+		i++;
+		it(`${i}: chunkArray - Should split array into n-sized chunks`, function() {
 			let expected = [[1, 2, 3], [4, 5, 6]];
 			let actual = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3);
 			assert.deepEqual(expected, actual);
-			let expected2 = [[1, 2, 3], [4, 5]];
-			let actual2 = helpful.chunkArray([1, 2, 3, 4, 5], 3);
-			assert.deepEqual(expected2, actual2);
+		});
+		
+		i++;
+		it(`${i}: chunkArray - Should split array into n-sized chunks (with one incomplete chunk)`, function() {
+			let expected = [[1, 2, 3], [4, 5]];
+			let actual = helpful.chunkArray([1, 2, 3, 4, 5], 3);
+			assert.deepEqual(expected, actual);
 		});
 	});
 	describe("Hex", function() {
