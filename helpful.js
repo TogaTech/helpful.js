@@ -85,6 +85,26 @@
 		return clone;
 	}
 
+	helpful.shuffleArray = function(array) {
+		if(array == null) return [];
+		let result = [];
+		let copy = array.slice();
+		while( copy.length ){
+			result.push(...copy.splice(Math.floor(Math.random() * copy.length), 1));
+		}
+		return result;
+	}
+
+	helpful.reverseArray = function(array) {
+		if(array == null) return [];
+		let result = [];
+		let copy = array.slice();
+		while( copy.length ){
+			result.unshift(copy.shift());
+		}
+		return result;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */

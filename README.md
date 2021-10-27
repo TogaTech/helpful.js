@@ -127,7 +127,6 @@ let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"
 
 **Return Type:** Array (`["t", "e", "s", "t"]`)
 
-
 ### differenceOfArrays
 Finds the difference between two arrays (any identical elements in the second array are removed from the first array)
 ```javascript
@@ -171,6 +170,26 @@ let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
 - array2: Array (`[2, 3, 4]`)
 
 **Return Type:** Array (`Array [1, 2, 3, 4]`)
+
+### shuffleArray
+Shuffles an array, returning another array with the same values but in a different order
+```javascript
+let array = helpful.shuffleArray(["t", "e", "s", "t"]); // ["e", "t", "t", "s"]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array(`["t", "e", "s", "t"]`)
+
+### reverseArray
+Reverses an array by creating a new array with the same values in the oposite order
+```javascript
+let array = helpful.reverseArray(["t", "e", "s", "t"]); // ["t", "s", "e", "t"]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array (`["t", "s", "e", "t"]`)
 
 ## Hex
 

@@ -48,6 +48,20 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
+		it("10: Should shuffle array", function() {
+			let actual = [1, 2, 3, 4, 5, 6, 7];
+			let shuffled = helpful.shuffleArray(actual);
+			assert.notDeepEqual(shuffled, actual);
+			assert.equal(7, shuffled.length)
+			assert.equal(7, actual.length)
+		});
+		it("11: Should reverse array", function() {
+			let expected = [7, 6, 5, 4, 3, 2, 1];
+			let actual = helpful.reverseArray([1, 2, 3, 4, 5, 6, 7]);
+			assert.deepEqual(expected, actual);
+			assert.equal(7, expected.length)
+			assert.equal(7, actual.length)
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {
