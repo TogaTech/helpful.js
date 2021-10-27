@@ -20,8 +20,10 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 
 # Table of Contents
 - [Imports](#imports)
-	- [Browser Import](#browser-import)
-	- [Node.js NPM Import](#nodejs-file-import)
+	- [Browser CDN Import](#browser-cdn-import)
+	- [Browser File Import](#browser-file-import)
+	- [Node.js NPM Import](#nodejs-npm-import)
+	- [Node.js File Import](#nodejs-file-import)
 - [Minify](#minify)
 - [Contributing](#contributing)
 - [Methods](#methods)
@@ -30,11 +32,65 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 
 # Imports
 
-## Browser Import
+## Browser CDN Import
+The `./helpful.js` and `./helpful.min.js` files are available on the UNPKG and jsDelivr CDNs. Please note that some newer methods may not yet be available on the CDNs until a new version has been published to NPM.
+
+**Minified from UNPKG (Recommended):**
+```html
+<script type="text/javascript" src="https://unpkg.com/@togatech/helpful-js@1/helpful.min.js"></script>
+<script>
+	helpful.stringToArray("hello");
+	helpful.duplicateArray([0, 1, 1, 3, 5]);
+	...
+</script>
+```
+
+**Unminified from UNPKG:**
+```html
+<script type="text/javascript" src="https://unpkg.com/@togatech/helpful-js@1/helpful.js"></script>
+<script>
+	helpful.stringToArray("hello");
+	helpful.duplicateArray([0, 1, 1, 3, 5]);
+	...
+</script>
+```
+
+**Minified from jsDelivr:**
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@togatech/helpful-js@1/helpful.min.js"></script>
+<script>
+	helpful.stringToArray("hello");
+	helpful.duplicateArray([0, 1, 1, 3, 5]);
+	...
+</script>
+```
+
+**Unminified from jsDelivr:**
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@togatech/helpful-js@1/helpful.js"></script>
+<script>
+	helpful.stringToArray("hello");
+	helpful.duplicateArray([0, 1, 1, 3, 5]);
+	...
+</script>
+```
+
+## Browser File Import
 For the browser, only `./helpful.js` or `./helpful.min.js` is required and has all dependencies bundled inside the single file. We recommend including `./helpful.min.js.map` in the same directory as `./helpful.min.js`, which allows a browser to reconstruct the original unminified file in the debugger.
 
+**Minified (Recommended):**
 ```html
 <script type="text/javascript" src="./helpful.min.js"></script>
+<script>
+	helpful.stringToArray("hello");
+	helpful.duplicateArray([0, 1, 1, 3, 5]);
+	...
+</script>
+```
+
+**Unminified:**
+```html
+<script type="text/javascript" src="./helpful.js"></script>
 <script>
 	helpful.stringToArray("hello");
 	helpful.duplicateArray([0, 1, 1, 3, 5]);
@@ -51,7 +107,7 @@ Make sure to run the test cases to ensure that helpful.js works properly:
 ```bash
 npm test
 ```
-To include helpful.js in your code:
+To include helpful.js in your code (includes `./helpful.js`):
 ```javascript
 const helpful = require("@togatech/helpful-js");
 helpful.stringToArray("hello");
@@ -74,6 +130,24 @@ Make sure to run the test cases to ensure that helpful.js works properly (you wi
 npm install mocha --save-dev
 mocha
 ```
+
+**Unminified (Recommended):**
+To include helpful.js in your code:
+```javascript
+const helpful = require("./helpful.js");
+helpful.stringToArray("hello");
+helpful.duplicateArray([0, 1, 1, 3, 5]);
+...
+```
+To include specific helpful.js methods in your code:
+```javascript
+const { stringToArray, duplicateArray } = require("./helpful.js");
+stringToArray("hello");
+duplicateArray([0, 1, 1, 3, 5]);
+...
+```
+
+**Minified:**
 To include helpful.js in your code:
 ```javascript
 const helpful = require("./helpful.min.js");
@@ -90,7 +164,7 @@ duplicateArray([0, 1, 1, 3, 5]);
 ```
 
 # Minify
-If you would like to minify the code yourself instead of using the provided `tenvoy.min.js` (and optional `tenvoy.min.js.map`), you can use [UglifyJS 3](https://github.com/mishoo/UglifyJS) to minifiy the code yourself.
+All minification is done transparently using a [GitHub Action Workflow](https://github.com/TogaTech/helpful.js/blob/main/.github/workflows/minify.yml). However, if you would like to minify the code yourself instead of using the provided `helpful.min.js` (and optional `helpful.min.js.map`), you can use [UglifyJS 3](https://github.com/mishoo/UglifyJS) to minifiy the code yourself.
 
 To install UglifyJS 3 as a command line app through NPM, run `npm install uglify-js -g`.
 
