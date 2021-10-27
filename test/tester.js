@@ -62,6 +62,36 @@ describe("Tests", function() {
 			assert.equal(7, expected.length)
 			assert.equal(7, actual.length)
 		});
+		it("12: Should default pad with spaces", function() {
+			let expected = "  test  ";
+			let actual = helpful.pad("test", 8);
+			assert.equal(expected, actual);
+		})
+		it("13: Should pad the end if extra room", function () {
+			let expected = "**test***";
+			let actual = helpful.pad("test", 9, "*");
+			assert.equal(expected, actual);
+		});
+		it("14: Should cut the end of the padded characters if too long", function () {
+			let expected = "_a_test_a_-";
+			let actual = helpful.pad("test", 11, "_a_-");
+			assert.equal(expected, actual);
+		});
+		it("15: Should cut the end of both sides if too long", function () {
+			let expected = "_a_test_a_";
+			let actual = helpful.pad("test", 10, "_a_-");
+			assert.equal(expected, actual);
+		});
+		it("16: Should pad only the beginning of the string", function () {
+			let expected = "**test";
+			let actual = helpful.padStart("test", 6, "**test");
+			assert.equal(expected, actual);
+		});
+		it("17: Should pad only the end of the string", function () {
+			let expected = "test**";
+			let actual = helpful.padEnd("test", 6, "**test");
+			assert.equal(expected, actual);
+		});
 	});
 	describe("Hex", function() {
 		it("1: Should convert string to hex", function() {

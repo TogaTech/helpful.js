@@ -191,6 +191,44 @@ let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "
 
 **Return Type:** Array (`Array(4) ["t", "s", "e", "t"]`)
 
+### pad
+Pad a string adding characters on the left and right side of it until the string reach a certain size.
+Padding is added evenly on both sides, but if there is an odd number of padding characters, the extra
+padding character is added to the end of the string.
+```javascript
+let string = helpful.pad("test", 8, "*"); // "**test**"
+```
+**Parameters:**
+- string: string (`"test"`)
+- number: size (`8`)
+- string: delimiter (`"*"`)
+
+**Return Type:** String (`"**test**"`)
+
+### padStart
+Pad a string adding characters on the left side of it until the string reach a certain size.
+```javascript
+let string = helpful.padStart("test", 6, "*"); // "**test"
+```
+**Parameters:**
+- string: string (`"test"`)
+- number: size (`6`)
+- string: delimiter (`"*"`)
+
+**Return Type:** String (`"**test"`)
+
+### padEnd
+Pad a string adding characters on the right side of it until the string reach a certain size.
+```javascript
+let string = helpful.padEnd("test", 6, "*"); // "test**"
+```
+**Parameters:**
+- string: string (`"test"`)
+- number: size (`6`)
+- string: delimiter (`"*"`)
+
+**Return Type:** String (`"test**"`)
+
 ## Hex
 
 ### hex.convertFromString
