@@ -110,44 +110,44 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 ### stringToArray
 Converts a string into an array of individual characters
 ```javascript
-let array = helpful.stringToArray("test"); // ["t", "e", "s", "t"]
+let array = helpful.stringToArray("test"); // Array(4) ["t", "e", "s", "t"]
 ```
 **Parameters:**
 - string: string (`"test"`)
 
-**Return Type:** Array (`["t", "e", "s", "t"]`)
+**Return Type:** Array (`Array(4) ["t", "e", "s", "t"]`)
 
 ### duplicateArray
 Duplicates an array by creating a new array and transferring all the elements from the first array
 ```javascript
-let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"]
+let array = helpful.duplicateArray(["t", "e", "s", "t"]); // Array(4) ["t", "e", "s", "t"]
 ```
 **Parameters:**
 - array: Array (`["t", "e", "s", "t"]`)
 
-**Return Type:** Array (`["t", "e", "s", "t"]`)
+**Return Type:** Array (`Array(4) ["t", "e", "s", "t"]`)
 
 ### differenceOfArrays
 Finds the difference between two arrays (any identical elements in the second array are removed from the first array)
 ```javascript
-let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
+let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // Array(1) [1]
 ```
 **Parameters:**
 - array1: Array (`[2, 1]`)
 - array2: Array (`[2, 3]`)
 
-**Return Type:** Array (`Array [1]`)
+**Return Type:** Array (`Array(1) [1]`)
 
 ### sumOfArrays
 Finds the sum of two arrays (the two arrays are combined)
 ```javascript
-let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // [1, 2, 3, 4]
+let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // Array(4) [1, 2, 3, 4]
 ```
 **Parameters:**
 - array1: Array (`[1, 2]`)
 - array2: Array (`[3, 4]`)
 
-**Return Type:** Array (`Array [1, 2, 3, 4]`)
+**Return Type:** Array (`Array(4) [1, 2, 3, 4]`)
 
 ### capitalize
 Capitalizes the first letter of every word
@@ -163,33 +163,33 @@ let capitalizedSentence = helpful.capitalize('hello javaScript world!'); // Hell
 ### mergeArrays
 Merges the second array into the first one (skip duplicated values)
 ```javascript
-let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
+let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // Array(4) [1, 2, 3, 4]
 ```
 **Parameters:**
 - array1: Array (`[1, 2, 3]`)
 - array2: Array (`[2, 3, 4]`)
 
-**Return Type:** Array (`Array [1, 2, 3, 4]`)
+**Return Type:** Array (`Array(4) [1, 2, 3, 4]`)
 
 ### shuffleArray
 Shuffles an array, returning another array with the same values but in a different order
 ```javascript
-let array = helpful.shuffleArray(["t", "e", "s", "t"]); // ["e", "t", "t", "s"]
+let array = helpful.shuffleArray(["t", "e", "s", "t"]); // Array(4) ["e", "t", "t", "s"]
 ```
 **Parameters:**
 - array: Array (`["t", "e", "s", "t"]`)
 
-**Return Type:** Array(`["t", "e", "s", "t"]`)
+**Return Type:** Array(`Array(4) ["e", "t", "t", "s"]`)
 
 ### reverseArray
 Reverses an array by creating a new array with the same values in the oposite order
 ```javascript
-let array = helpful.reverseArray(["t", "e", "s", "t"]); // ["t", "s", "e", "t"]
+let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "e", "t"]
 ```
 **Parameters:**
 - array: Array (`["t", "e", "s", "t"]`)
 
-**Return Type:** Array (`["t", "s", "e", "t"]`)
+**Return Type:** Array (`Array(4) ["t", "s", "e", "t"]`)
 
 ## Hex
 
@@ -219,16 +219,16 @@ Converts a bytes array to hexadecimal
 let hex = helpful.hex.convertFromBytes(new Uint8Array([116, 101, 115, 116])); // "74657374"
 ```
 **Parameters:**
-- bytes: Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+- bytes: Uint8Array (`new Uint8Array([116, 101, 115, 116])`)
 
 **Return Type:** string (`"74657374"`)
 
 ### hex.convertToBytes
 Converts hexadecimal to a bytes array
 ```javascript
-let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115, 116]
+let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array(4) [116, 101, 115, 116]
 ```
 **Parameters:**
 - hex: string (`"74657374"`)
 
-**Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+**Return Type:** Uint8Array (`Uint8Array(4) [116, 101, 115, 116]`)
