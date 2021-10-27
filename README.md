@@ -5,6 +5,7 @@
 </p>
 
 <h1 align="center">helpful.js</h1>
+<h3 align="center"><a href="https://helpful.js.org/">helpful.js.org</a></h3>
 <p align="center">
   <a href="https://github.com/TogaTech/helpful.js/actions"><img src="https://img.shields.io/github/workflow/status/TogaTech/helpful.js/Node.js%20CI" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/v/@togatech/helpful-js.svg?sanitize=true" alt="Version"></a>
@@ -16,8 +17,6 @@
 A collection of helpful JavaScript functions, started by [TogaTech.org](https://togatech.org/) and built by the open-source community
 
 To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.md).
-
-Website: [helpful.js.org](https://helpful.js.org/)
 
 # Table of Contents
 - [Imports](#imports)
@@ -110,45 +109,46 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 ### stringToArray
 Converts a string into an array of individual characters
 ```javascript
-let array = helpful.stringToArray("test"); // ["t", "e", "s", "t"]
+let array = helpful.stringToArray("test"); // Array(4) ["t", "e", "s", "t"]
 ```
 **Parameters:**
 - string: string (`"test"`)
 
-**Return Type:** Array (`["t", "e", "s", "t"]`)
+**Return Type:** Array (`Array(4) ["t", "e", "s", "t"]`)
 
 ### duplicateArray
 Duplicates an array by creating a new array and transferring all the elements from the first array
 ```javascript
-let array = helpful.duplicateArray(["t", "e", "s", "t"]); // ["t", "e", "s", "t"]
+let array = helpful.duplicateArray(["t", "e", "s", "t"]); // Array(4) ["t", "e", "s", "t"]
 ```
 **Parameters:**
 - array: Array (`["t", "e", "s", "t"]`)
 
-**Return Type:** Array (`["t", "e", "s", "t"]`)
-
+**Return Type:** Array (`Array(4) ["t", "e", "s", "t"]`)
 
 ### differenceOfArrays
 Finds the difference between two arrays (any identical elements in the second array are removed from the first array)
 ```javascript
-let differenceArray = helpful.differenceOfArrays([2, 1], [2, 3]); // [1]
+let differenceArray1 = helpful.differenceOfArrays([2, 1], [2, 3]); // Array(1) [1]
+let differenceArray2 = helpful.differenceOfArrays([], [2, 3]); // Array(0) []
+let differenceArray3 = helpful.differenceOfArrays([10, 20], [2, 1]); // Array(2) [10, 20]
 ```
 **Parameters:**
 - array1: Array (`[2, 1]`)
 - array2: Array (`[2, 3]`)
 
-**Return Type:** Array (`Array [1]`)
+**Return Type:** Array (`Array(1) [1]`)
 
 ### sumOfArrays
 Finds the sum of two arrays (the two arrays are combined)
 ```javascript
-let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // [1, 2, 3, 4]
+let sumArray = helpful.sumOfArrays([1, 2], [3, 4]); // Array(4) [1, 2, 3, 4]
 ```
 **Parameters:**
 - array1: Array (`[1, 2]`)
 - array2: Array (`[3, 4]`)
 
-**Return Type:** Array (`Array [1, 2, 3, 4]`)
+**Return Type:** Array (`Array(4) [1, 2, 3, 4]`)
 
 ### capitalize
 Capitalizes the first letter of every word
@@ -164,13 +164,91 @@ let capitalizedSentence = helpful.capitalize('hello javaScript world!'); // Hell
 ### mergeArrays
 Merges the second array into the first one (skip duplicated values)
 ```javascript
-let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // [1, 2, 3, 4]
+let mergedArray = helpful.mergeArrays([1, 2, 3], [2, 3, 4]); // Array(4) [1, 2, 3, 4]
 ```
 **Parameters:**
 - array1: Array (`[1, 2, 3]`)
 - array2: Array (`[2, 3, 4]`)
 
-**Return Type:** Array (`Array [1, 2, 3, 4]`)
+**Return Type:** Array (`Array(4) [1, 2, 3, 4]`)
+
+### shuffleArray
+Shuffles an array, returning another array with the same values but in a different order
+```javascript
+let array = helpful.shuffleArray(["t", "e", "s", "t"]); // Array(4) ["e", "t", "t", "s"]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array(`Array(4) ["e", "t", "t", "s"]`)
+
+### reverseArray
+Reverses an array by creating a new array with the same values in the oposite order
+```javascript
+let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "e", "t"]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array (`Array(4) ["t", "s", "e", "t"]`)
+
+### pad
+Pad a string adding characters on the left and right side of it until the string reach a certain size.
+Padding is added evenly on both sides, but if there is an odd number of padding characters, the extra
+padding character is added to the end of the string.
+```javascript
+let padded1 = helpful.pad("test", 8, "*"); // "**test**"
+let padded2 = helpful.pad("test", 8); // "  test  "
+let padded3 = helpful.pad("test", 9, "*"); // "**test***"
+let padded4 = helpful.pad("test", 11, "_a_-"); // "_a_test_a_-"
+let padded5 = helpful.pad("test", 10, "_a_-"); // "_a_test_a_"
+```
+**Parameters:**
+- string: string (`"test"`)
+- size: number (`8`)
+- delimiter: string (`"*"`)
+
+**Return Type:** string (`"**test**"`)
+
+### padStart
+Pad a string adding characters on the left side of it until the string reach a certain size.
+```javascript
+let padded1 = helpful.padStart("test", 6, "*"); // "**test"
+let padded2 = helpful.padStart("test", 6); // "  test"
+let padded3 = helpful.padStart("test", 6, "_a_-"); // "_atest"
+```
+**Parameters:**
+- string: string (`"test"`)
+- size: number (`6`)
+- delimiter: string (`"*"`)
+
+**Return Type:** string (`"**test"`)
+
+### padEnd
+Pad a string adding characters on the right side of it until the string reach a certain size.
+```javascript
+let padded1 = helpful.padEnd("test", 6, "*"); // "test**"
+let padded2 = helpful.padEnd("test", 6); // "test  "
+let padded3 = helpful.padEnd("test", 6, "_a_-"); // "test_a"
+```
+**Parameters:**
+- string: string (`"test"`)
+- size: number (`6`)
+- delimiter: string (`"*"`)
+
+**Return Type:** string (`"test**"`)
+
+### chunkArray
+Split an array into n-sized chunks
+```javascript
+let chunkedArray1 = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3); // Array(2) [[1, 2, 3], [4, 5, 6]]
+let chunkedArray2 = helpful.chunkArray([1, 2, 3, 4, 5], 3); // Array(2) [[1, 2, 3], [4, 5]]
+```
+**Parameters:**
+- array: Array (`[1, 2, 3, 4, 5, 6]`)
+- n: number (`3`)
+
+**Return Type:** Array (`Array(2) [[1, 2, 3], [4, 5, 6]]`)
 
 ### average
 Find the average of an array
@@ -210,16 +288,16 @@ Converts a bytes array to hexadecimal
 let hex = helpful.hex.convertFromBytes(new Uint8Array([116, 101, 115, 116])); // "74657374"
 ```
 **Parameters:**
-- bytes: Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+- bytes: Uint8Array (`new Uint8Array([116, 101, 115, 116])`)
 
 **Return Type:** string (`"74657374"`)
 
 ### hex.convertToBytes
 Converts hexadecimal to a bytes array
 ```javascript
-let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array [116, 101, 115, 116]
+let bytes = helpful.hex.convertToBytes("74657374"); // Uint8Array(4) [116, 101, 115, 116]
 ```
 **Parameters:**
 - hex: string (`"74657374"`)
 
-**Return Type:** Uint8Array (`Uint8Array [116, 101, 115, 116]`)
+**Return Type:** Uint8Array (`Uint8Array(4) [116, 101, 115, 116]`)
