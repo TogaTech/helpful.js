@@ -105,6 +105,48 @@
 		return result;
 	}
 
+	helpful.pad = function(string, size, delimiter = " ") {
+		if (string === null) {
+			return "";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const leftPad = getPadString(delimiter, Math.floor(availableChars / 2));
+		const rightPad = getPadString(delimiter, Math.ceil(availableChars / 2))
+		return `${leftPad}${string}${rightPad}`;
+	}
+
+	helpful.padStart = function(string, size, delimiter = " ") {
+		if (string === null) {
+			return "";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const pad = getPadString(delimiter, availableChars);
+		return `${pad}${string}`;
+	}
+
+	helpful.padEnd = function(string, size, delimiter = " ") {
+		if (string === null) {
+			return "";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const pad = getPadString(delimiter, availableChars);
+		return `${string}${pad}`;
+	}
+
+	const getPadString = (delimiter, size) => {
+		return delimiter.repeat(size / delimiter.length) 
+			+ delimiter.substring(0, size % delimiter.length);
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
