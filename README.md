@@ -250,6 +250,16 @@ let chunkedArray2 = helpful.chunkArray([1, 2, 3, 4, 5], 3); // Array(2) [[1, 2, 
 
 **Return Type:** Array (`Array(2) [[1, 2, 3], [4, 5, 6]]`)
 
+### average
+Find the average of an array
+```javascript
+let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
+```
+**Parameters:**
+- array: Array (`[1, 2, 4, 4]`)
+
+**Return Type:** Number (`2.75`)
+
 ## Hex
 
 ### hex.convertFromString

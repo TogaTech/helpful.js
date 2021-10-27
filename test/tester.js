@@ -67,7 +67,7 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
-		
+    
 		i++;
 		it(`${i}: shuffleArray - Should shuffle array`, function() {
 			let unshuffled = [1, 2, 3, 4, 5, 6, 7];
@@ -154,6 +154,14 @@ describe("Tests", function() {
 			let actual = helpful.chunkArray([1, 2, 3, 4, 5], 3);
 			assert.deepEqual(expected, actual);
 		});
+    
+		i++;
+    it(`${i}: average - Should calculate the average of an array`, function(){
+			let expected = 2.75;
+			let actual = helpful.average([1, 2, 4, 4]);
+			assert.equal(expected, actual);
+		});
+    
 	});
 	describe("Hex", function() {
 		let i = 0;
@@ -185,5 +193,7 @@ describe("Tests", function() {
 			let actual = helpful.hex.convertToBytes("74657374");
 			assert.deepEqual(expected, actual);
 		});
+    
 	});
+  
 });
