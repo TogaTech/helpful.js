@@ -48,7 +48,51 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
-		it("10: Should split array into n-sized chunks", function() {
+		it("10: Should shuffle array", function() {
+			let actual = [1, 2, 3, 4, 5, 6, 7];
+			let shuffled = helpful.shuffleArray(actual);
+			assert.notDeepEqual(shuffled, actual);
+			assert.equal(7, shuffled.length)
+			assert.equal(7, actual.length)
+		});
+		it("11: Should reverse array", function() {
+			let expected = [7, 6, 5, 4, 3, 2, 1];
+			let actual = helpful.reverseArray([1, 2, 3, 4, 5, 6, 7]);
+			assert.deepEqual(expected, actual);
+			assert.equal(7, expected.length)
+			assert.equal(7, actual.length)
+		});
+		it("12: Should default pad with spaces", function() {
+			let expected = "  test  ";
+			let actual = helpful.pad("test", 8);
+			assert.equal(expected, actual);
+		})
+		it("13: Should pad the end if extra room", function () {
+			let expected = "**test***";
+			let actual = helpful.pad("test", 9, "*");
+			assert.equal(expected, actual);
+		});
+		it("14: Should cut the end of the padded characters if too long", function () {
+			let expected = "_a_test_a_-";
+			let actual = helpful.pad("test", 11, "_a_-");
+			assert.equal(expected, actual);
+		});
+		it("15: Should cut the end of both sides if too long", function () {
+			let expected = "_a_test_a_";
+			let actual = helpful.pad("test", 10, "_a_-");
+			assert.equal(expected, actual);
+		});
+		it("16: Should pad only the beginning of the string", function () {
+			let expected = "**test";
+			let actual = helpful.padStart("test", 6, "**test");
+			assert.equal(expected, actual);
+		});
+		it("17: Should pad only the end of the string", function () {
+			let expected = "test**";
+			let actual = helpful.padEnd("test", 6, "**test");
+			assert.equal(expected, actual);
+		});
+		it("18: Should split array into n-sized chunks", function() {
 			let expected = [[1, 2, 3], [4, 5, 6]];
 			let actual = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3);
 			assert.deepEqual(expected, actual);
