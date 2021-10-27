@@ -143,8 +143,23 @@
 	}
 
 	const getPadString = (delimiter, size) => {
-		return delimiter.repeat(size / delimiter.length) 
+		return delimiter.repeat(size / delimiter.length)
 			+ delimiter.substring(0, size % delimiter.length);
+	}
+
+	helpful.chunkArray = function(array, n) {
+		if(array == null) {
+			return [];
+		}
+		const res = [];
+		const numberOfChunks = Math.ceil(array.length / n);
+		let from = 0;
+		while(res.length < numberOfChunks) {
+			const to = from + n;
+			res.push(array.slice(from, to));
+			from = to;
+		}
+		return res;
 	}
 
 	helpful.hex = {};

@@ -229,6 +229,17 @@ let string = helpful.padEnd("test", 6, "*"); // "test**"
 
 **Return Type:** string (`"test**"`)
 
+### chunkArray
+Split an array into n-sized chunks
+```javascript
+let chunkedArray = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3); // [[1, 2, 3], [4, 5, 6]]
+```
+**Parameters:**
+- array: Array (`[1, 2, 3, 4, 5, 6]`)
+- n: number (`3`)
+
+**Return Type:** Array (`Array [[1, 2, 3], [4, 5, 6]]`)
+
 ## Hex
 
 ### hex.convertFromString
