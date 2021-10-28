@@ -361,7 +361,11 @@ console.log(array2); // Array(4) ["*", "*", "*", "*"]
 
 **Return Type:** Array (`Array(7) [1, 1, 1, 1, 1, 1, 1]`)
 
-**Side Effects:** The original array object passed as a parameter is filled directly. The same array is returned again for convenience, but the return value does not need to be stored if the original array is already stored.
+**Side Effects:**
+The original array object passed as a parameter is filled directly.
+The same array is returned again for convenience,
+but the return value does not need to be stored
+if the original array is already stored.
 
 ### flattenArray
 Flattens an array
