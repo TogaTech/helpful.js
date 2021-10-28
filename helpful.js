@@ -84,7 +84,7 @@
 		}
 		return clone;
 	}
-	
+
 	helpful.average = function(array) {
 		if(array == null ) {
 			return [];
@@ -194,6 +194,30 @@
 			const to = from + n;
 			res.push(array.slice(from, to));
 			from = to;
+		}
+		return res;
+	}
+
+	helpful.flattenArray = function(array) {
+		const res = [];
+		for(const item of array) {
+			if(Array.isArray(item)) {
+				res.push(...item);
+			} else {
+				res.push(item);
+			}
+		}
+		return res;
+	}
+
+	helpful.deepFlattenArray = function(array) {
+		const res = [];
+		for(const item of array) {
+			if(Array.isArray(item)) {
+				res.push(...this.deepFlattenArray(item));
+			} else {
+				res.push(item);
+			}
 		}
 		return res;
 	}
