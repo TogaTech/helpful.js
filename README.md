@@ -7,6 +7,11 @@
 <h1 align="center">helpful.js</h1>
 <h3 align="center"><a href="https://helpful.js.org/">helpful.js.org</a></h3>
 <p align="center">
+	<a href="https://twitter.com/intent/tweet?text=I%20recently%20discovered%20the%20lightweight%20helpful.js%20library,%20a%20collection%20of%20helpful%20JavaScript%20functions%20started%20by%20TogaTech.org%20and%20built%20by%20the%20open-source%20community!&url=https://helpful.js.org/&via=TogaTechTweets&hashtags=developers,webdev,javascript,helpful,helpfuljs" target="_blank" rel="noopener noreferrer">
+		<img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet">
+	</a>
+	<br>
+	<br>
   <a href="https://github.com/TogaTech/helpful.js/actions"><img src="https://img.shields.io/github/workflow/status/TogaTech/helpful.js/Node.js%20CI" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/v/@togatech/helpful-js.svg?sanitize=true" alt="Version"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/l/@togatech/helpful-js.svg?sanitize=true" alt="License"></a>
