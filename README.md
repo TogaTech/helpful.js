@@ -33,7 +33,7 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 # Imports
 
 ## Browser CDN Import
-The `./helpful.js` and `./helpful.min.js` files are available on the UNPKG and jsDelivr CDNs. Please note that some newer methods may not yet be available on the CDNs until a new version has been published to NPM.
+The `./helpful.js` and `./helpful.min.js` files are available on the UNPKG and jsDelivr CDNs. Please note that some newer methods may not yet be available on the CDNs until a new version has been published to NPM (which occurs every few days).
 
 **Minified from UNPKG (Recommended):**
 ```html
@@ -99,7 +99,7 @@ For the browser, only `./helpful.js` or `./helpful.min.js` is required and has a
 ```
 
 ## Node.js NPM Import
-Helpful.js is available through the NPM registry. To install helpful.js, use the following command in the terminal:
+Helpful.js is available through the NPM registry. Please note that some newer methods may not yet be available until a new version has been published to NPM (which occurs every few days). To install helpful.js, use the following command in the terminal:
 ```bash
 npm install @togatech/helpful-js
 ```
