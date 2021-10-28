@@ -363,6 +363,29 @@ console.log(array2); // Array(4) ["*", "*", "*", "*"]
 
 **Side Effects:** The original array object passed as a parameter is filled directly. The same array is returned again for convenience, but the return value does not need to be stored if the original array is already stored.
 
+### flattenArray
+Flattens an array
+```javascript
+let flattenedArray1 = helpful.flattenArray([[0, 1], [2, 3]]); // Array(4) [0, 1, 2, 3]
+let flattenedArray2 = helpful.flattenArray([[0, 1], [2, [3, 4]]]); // Array(4) [0, 1, 2, [3, 4]]
+```
+**Parameters:**
+- array: Array (`[[0, 1], [2, 3]]`)
+
+**Return Type:** Array (`Array(4) [0, 1, 2, 3]`)
+
+### deepFlattenArray
+Deep flattens an array
+```javascript
+let deepFlattenedArray1 = helpful.deepFlattenArray([[0, 1], [2, [3, 4]]]); // Array(5) [0, 1, 2, 3, 4]
+let deepFlattenedArray2 = helpful.deepFlattenArray([[0, 1], [2, 3]]); // Array(4) [0, 1, 2, 3]
+let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]); // Array(7) [0, 1, 2, 3, 4, 5, 6]
+```
+**Parameters:**
+- array: Array (`[[0, 1], [2, [3, 4]]]`)
+
+**Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
+
 ## Hex
 
 ### hex.convertFromString

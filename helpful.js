@@ -84,7 +84,7 @@
 		}
 		return clone;
 	}
-	
+
 	helpful.average = function(array) {
 		if(array == null ) {
 			return [];
@@ -197,7 +197,8 @@
 		}
 		return res;
 	}
-
+  
+  
 	helpful.fillArray = function(array, object) {
 		if(array == null) {
 			return [];
@@ -206,6 +207,32 @@
 			array[i] = object
 		}
 		return array;
+  }
+  
+  helpful.flattenArray = function(array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
+			if(Array.isArray(item)) {
+				res.push(...item);
+			} else {
+				res.push(item);
+			}
+		}
+		return res;
+	}
+
+	helpful.deepFlattenArray = function(array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
+			if(Array.isArray(item)) {
+				res.push(...this.deepFlattenArray(item));
+			} else {
+				res.push(item);
+			}
+		}
+		return res;
 	}
 
 	helpful.hex = {};
