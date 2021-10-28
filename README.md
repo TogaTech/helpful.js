@@ -344,6 +344,16 @@ let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
 
 **Return Type:** number (`2.75`)
 
+### fillArray
+Replaces each element of the given array with the given value
+```javascript
+let array = helpful.fillArray(["t", "e", "s", "t"], 1); // [1, 1, 1, 1]
+```
+**Parameters:**
+- array: Array (`["t", "e", "s", "t"]`)
+
+**Return Type:** Array (`[1, 1, 1, 1]`)
+
 ## Hex
 
 ### hex.convertFromString

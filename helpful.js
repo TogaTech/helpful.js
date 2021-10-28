@@ -198,6 +198,13 @@
 		return res;
 	}
 
+	helpful.fillArray = function(array, object) {
+		if(array == null) return [];
+		for(let i = 0; i < array.length; i++)
+			array[i] = object
+		return array;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
