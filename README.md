@@ -257,7 +257,7 @@ let array = helpful.shuffleArray(["t", "e", "s", "t"]); // Array(4) ["e", "t", "
 **Return Type:** Array(`Array(4) ["e", "t", "t", "s"]`)
 
 ### reverseArray
-Reverses an array by creating a new array with the same values in the oposite order
+Reverses an array by creating a new array with the same values in the opposite order
 ```javascript
 let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "e", "t"]
 ```
@@ -286,7 +286,7 @@ let padded5 = helpful.pad("test", 10, "_a_-"); // "_a_test_a_"
 **Return Type:** string (`"**test**"`)
 
 ### padStart
-Pad a string by adding characters to the start until the string reaches a certain size
+Pads a string by adding characters to the start until the string reaches a certain size
 
 If the padding character is too large, it will be truncated.
 ```javascript
