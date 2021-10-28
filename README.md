@@ -345,14 +345,23 @@ let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
 **Return Type:** number (`2.75`)
 
 ### fillArray
-Replaces each element of the given array with the given value
+Replaces each element of an array with a given value
 ```javascript
-let array = helpful.fillArray(["t", "e", "s", "t"], 1); // [1, 1, 1, 1]
+let array1 = [1, 2, 3, 4, 5, 6, 7];
+let filled = helpful.fillArray(array1, 1); // Array(7) [1, 1, 1, 1, 1, 1, 1]
+console.log(array1); // Array(7) [1, 1, 1, 1, 1, 1, 1]
+
+let array2 = [1, 2, 3, 4];
+helpful.fillArray(array2, "*"); // Array(4) ["*", "*", "*", "*"]
+console.log(array2); // Array(4) ["*", "*", "*", "*"]
 ```
 **Parameters:**
-- array: Array (`["t", "e", "s", "t"]`)
+- array: Array (`[1, 2, 3, 4, 5, 6, 7]`)
+- object: any (`1`)
 
-**Return Type:** Array (`[1, 1, 1, 1]`)
+**Return Type:** Array (`Array(7) [1, 1, 1, 1, 1, 1, 1]`)
+
+**Side Effects:** The original array object passed as a parameter is filled directly. The same array is returned again for convenience, but the return value does not need to be stored if the original array is already stored.
 
 ## Hex
 

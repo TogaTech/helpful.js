@@ -199,9 +199,12 @@
 	}
 
 	helpful.fillArray = function(array, object) {
-		if(array == null) return [];
-		for(let i = 0; i < array.length; i++)
+		if(array == null) {
+			return [];
+		}
+		for(let i = 0; i < array.length; i++) {
 			array[i] = object
+		}
 		return array;
 	}
 
