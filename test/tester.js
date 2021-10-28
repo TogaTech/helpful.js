@@ -67,7 +67,7 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
-
+    
 		i++;
 		it(`${i}: shuffleArray - Should shuffle array`, function() {
 			let unshuffled = [1, 2, 3, 4, 5, 6, 7];
@@ -142,7 +142,7 @@ describe("Tests", function() {
 		});
 
 		i++;
-		it(`${i}: chunkArray - Should split array into n-sized chunks`, function() {
+		it(`${i}: chunkArray - Should split array into n-sized chunks`, function () {
 			let expected = [[1, 2, 3], [4, 5, 6]];
 			let actual = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3);
 			assert.deepEqual(expected, actual);
@@ -156,31 +156,62 @@ describe("Tests", function() {
 		});
 
 		i++;
-		it(`${i}: average - Should calculate the average of an array`, function(){
+		it(`${i}: average - Should calculate the average of an array`, function () {
 			let expected = 2.75;
 			let actual = helpful.average([1, 2, 4, 4]);
 			assert.equal(expected, actual);
 		});
-
+    
+    i++;
+		it(`${i}: fillArray - Should return array filled with the given value`, function () {
+			let expected = [1, 1, 1, 1, 1, 1, 1];
+			let actual = helpful.fillArray([1, 2, 3, 4, 5, 6, 7], 1);
+			assert.deepEqual(expected, actual);
+		});
+		
 		i++;
-		it(`${i}: flatten - Should flatten an multidimensional array`, function(){
+		it(`${i}: fillArray - Should fill array with the given value`, function () {
+			let expected = ["*", "*", "*", "*"];
+			let actual = [1, 2, 3, 4];
+			helpful.fillArray(actual, "*");
+			assert.deepEqual(expected, actual);
+		});
+    
+    i++;
+		it(`${i}: flatten - Should flatten a multidimensional array`, function () {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.flattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
-			let expected2 = [0, 1, 2, [3, 4]];
-			let actual2 = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
-			assert.deepEqual(expected2, actual2);
+		});
+    
+    i++;
+		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function () {
+			let expected = [0, 1, 2, [3, 4]];
+			let actual = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
+			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: deepFlatten - Should deep flatten an multidimensional array`, function(){
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array`, function () {
+			let expected = [0, 1, 2, 3];
+			let actual = helpful.deepFlattenArray([[0, 1], [2, 3]]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing a multidimensional array`, function () {
 			let expected = [0, 1, 2, 3, 4];
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4]]]);
 			assert.deepEqual(expected, actual);
-			let expected2 = [0, 1, 2, 3, 4, 5, 6];
-			let actual2 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
-			assert.deepEqual(expected2, actual2);
 		});
+
+		i++;
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing multiple inner multidimensional arrays`, function () {
+			let expected = [0, 1, 2, 3, 4, 5, 6];
+			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
+			assert.deepEqual(expected, actual);
+		});
+    
 	});
 	describe("Hex", function() {
 		let i = 0;

@@ -197,10 +197,22 @@
 		}
 		return res;
 	}
-
-	helpful.flattenArray = function(array) {
-		const res = [];
-		for(const item of array) {
+  
+  
+	helpful.fillArray = function(array, object) {
+		if(array == null) {
+			return [];
+		}
+		for(let i = 0; i < array.length; i++) {
+			array[i] = object
+		}
+		return array;
+  }
+  
+  helpful.flattenArray = function(array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...item);
 			} else {
@@ -211,8 +223,9 @@
 	}
 
 	helpful.deepFlattenArray = function(array) {
-		const res = [];
-		for(const item of array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...this.deepFlattenArray(item));
 			} else {

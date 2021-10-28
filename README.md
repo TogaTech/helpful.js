@@ -7,6 +7,11 @@
 <h1 align="center">helpful.js</h1>
 <h3 align="center"><a href="https://helpful.js.org/">helpful.js.org</a></h3>
 <p align="center">
+	<a href="https://twitter.com/intent/tweet?text=I%20recently%20discovered%20the%20lightweight%20helpful.js%20library,%20a%20collection%20of%20helpful%20JavaScript%20functions%20started%20by%20TogaTech.org%20and%20built%20by%20the%20open-source%20community!&url=https://helpful.js.org/&via=TogaTechTweets&hashtags=developers,webdev,javascript,helpful,helpfuljs" target="_blank" rel="noopener noreferrer">
+		<img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social" alt="Tweet">
+	</a>
+	<br>
+	<br>
   <a href="https://github.com/TogaTech/helpful.js/actions"><img src="https://img.shields.io/github/workflow/status/TogaTech/helpful.js/Node.js%20CI" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/v/@togatech/helpful-js.svg?sanitize=true" alt="Version"></a>
   <a href="https://www.npmjs.com/package/@togatech/helpful-js"><img src="https://img.shields.io/npm/l/@togatech/helpful-js.svg?sanitize=true" alt="License"></a>
@@ -33,7 +38,7 @@ To contribute to helpful.js, please see the [contributing guide](/CONTRIBUTING.m
 # Imports
 
 ## Browser CDN Import
-The `./helpful.js` and `./helpful.min.js` files are available on the UNPKG and jsDelivr CDNs. Please note that some newer methods may not yet be available on the CDNs until a new version has been published to NPM.
+The `./helpful.js` and `./helpful.min.js` files are available on the UNPKG and jsDelivr CDNs. Please note that some newer methods may not yet be available on the CDNs until a new version has been published to NPM (which occurs every few days).
 
 **Minified from UNPKG (Recommended):**
 ```html
@@ -99,7 +104,7 @@ For the browser, only `./helpful.js` or `./helpful.min.js` is required and has a
 ```
 
 ## Node.js NPM Import
-Helpful.js is available through the NPM registry. To install helpful.js, use the following command in the terminal:
+Helpful.js is available through the NPM registry. Please note that some newer methods may not yet be available until a new version has been published to NPM (which occurs every few days). To install helpful.js, use the following command in the terminal:
 ```bash
 npm install @togatech/helpful-js
 ```
@@ -257,7 +262,7 @@ let array = helpful.shuffleArray(["t", "e", "s", "t"]); // Array(4) ["e", "t", "
 **Return Type:** Array(`Array(4) ["e", "t", "t", "s"]`)
 
 ### reverseArray
-Reverses an array by creating a new array with the same values in the oposite order
+Reverses an array by creating a new array with the same values in the opposite order
 ```javascript
 let array = helpful.reverseArray(["t", "e", "s", "t"]); // Array(4) ["t", "s", "e", "t"]
 ```
@@ -286,7 +291,7 @@ let padded5 = helpful.pad("test", 10, "_a_-"); // "_a_test_a_"
 **Return Type:** string (`"**test**"`)
 
 ### padStart
-Pad a string by adding characters to the start until the string reaches a certain size
+Pads a string by adding characters to the start until the string reaches a certain size
 
 If the padding character is too large, it will be truncated.
 ```javascript
@@ -339,6 +344,25 @@ let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
 
 **Return Type:** number (`2.75`)
 
+### fillArray
+Replaces each element of an array with a given value
+```javascript
+let array1 = [1, 2, 3, 4, 5, 6, 7];
+let filled = helpful.fillArray(array1, 1); // Array(7) [1, 1, 1, 1, 1, 1, 1]
+console.log(array1); // Array(7) [1, 1, 1, 1, 1, 1, 1]
+
+let array2 = [1, 2, 3, 4];
+helpful.fillArray(array2, "*"); // Array(4) ["*", "*", "*", "*"]
+console.log(array2); // Array(4) ["*", "*", "*", "*"]
+```
+**Parameters:**
+- array: Array (`[1, 2, 3, 4, 5, 6, 7]`)
+- object: any (`1`)
+
+**Return Type:** Array (`Array(7) [1, 1, 1, 1, 1, 1, 1]`)
+
+**Side Effects:** The original array object passed as a parameter is filled directly. The same array is returned again for convenience, but the return value does not need to be stored if the original array is already stored.
+
 ### flattenArray
 Flattens an array
 ```javascript
@@ -353,7 +377,9 @@ let flattenedArray2 = helpful.flattenArray([[0, 1], [2, [3, 4]]]); // Array(4) [
 ### deepFlattenArray
 Deep flattens an array
 ```javascript
-let deepFlattenedArray = helpful.deepFlattenArray([[0, 1], [2, [3, 4]]]); // Array(5) [0, 1, 2, 3, 4]
+let deepFlattenedArray1 = helpful.deepFlattenArray([[0, 1], [2, [3, 4]]]); // Array(5) [0, 1, 2, 3, 4]
+let deepFlattenedArray2 = helpful.deepFlattenArray([[0, 1], [2, 3]]); // Array(4) [0, 1, 2, 3]
+let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]); // Array(7) [0, 1, 2, 3, 4, 5, 6]
 ```
 **Parameters:**
 - array: Array (`[[0, 1], [2, [3, 4]]]`)
