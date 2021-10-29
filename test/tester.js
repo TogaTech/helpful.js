@@ -177,14 +177,14 @@ describe("Tests", function() {
 			assert.deepEqual(expected, actual);
 		});
     
-    i++;
+    	i++;
 		it(`${i}: flatten - Should flatten a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.flattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
 		});
     
-    i++;
+    	i++;
 		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function() {
 			let expected = [0, 1, 2, [3, 4]];
 			let actual = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
@@ -212,6 +212,48 @@ describe("Tests", function() {
 			assert.deepEqual(expected, actual);
 		});
     
+		i++;
+		it(`${i}: padArray - Should default pad an array with undefined`, function () {
+			let expected = [undefined, undefined, "t", "e", "s", "t", undefined, undefined];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 8);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArray - Should pad an array end if extra room`, function () {
+			let expected = ["*", "*", "t", "e", "s", "t", "*", "*", "*"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 9, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++
+		it(`${i}: padArray - Should cut the end of the padding array on one side if too long`, function () {
+			let expected = ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_", "-"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 11, ["_", "a", "_", "-"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArray - Should cut the end of the padding array on both sides if too long`, function () {
+			let expected = ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 10, ["_", "a", "_", "-"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArrayStart - Should pad only the beginning of the array`, function () {
+			let expected = ["*", "*", "t", "e", "s", "t"];
+			let actual = helpful.padArrayStart(["t", "e", "s", "t"], 6, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArrayEnd - Should pad only the end of the array`, function () {
+			let expected = ["t", "e", "s", "t", "*", "*"];
+			let actual = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+		
 	});
 	describe("Hex", function() {
 		let i = 0;

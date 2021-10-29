@@ -212,7 +212,7 @@
   helpful.flattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...item);
 			} else {
@@ -225,7 +225,7 @@
 	helpful.deepFlattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...this.deepFlattenArray(item));
 			} else {
@@ -233,6 +233,47 @@
 			}
 		}
 		return res;
+	}
+
+	helpful.padArray = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const leftPad = getPadArray(delimiter, Math.floor(availableSpaces / 2));
+		const rightPad = getPadArray(delimiter, Math.ceil(availableSpaces / 2));
+		return [ ...leftPad, ...array, ...rightPad ];
+	}
+
+	helpful.padArrayStart = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...pad, ...array ];
+	}
+
+	helpful.padArrayEnd = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...array, ...pad ];
+	}
+
+	const getPadArray = function(delimiter, size) {
+		return Array(size).fill(delimiter).flat().slice(0, size);
 	}
 
 	helpful.hex = {};

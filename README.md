@@ -390,6 +390,46 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
 
+### padArray
+Pad an array adding elements on the left and right side of it until the array reach a certain size.
+
+Padding is added evenly on both sides, but if there is an odd number of padding elements, the extra
+padding element is added to the end of the array.
+The default padding element is `undefined`.
+```javascript
+let array = helpful.padArray(["t", "e", "s", "t"], 8, ["*"]); // Array(8) ["*", "*", "t", "e", "s", "t", "*", "*"]
+```
+**Parameters:**
+- array: array (`["t", "e", "s", "t"]`)
+- number: size (`8`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t" "*", "*"]`)
+
+### padArrayStart
+Pad an array adding elements on the left side of it until the array reach a certain size.
+```javascript
+let array = helpful.padArrayStart(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["*", "*", "t", "e", "s", "t"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t"]`)
+
+### padArrayEnd
+Pad an array adding elements on the right side of it until the array reach a certain size.
+```javascript
+let array = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["t", "e", "s", "t", "*", "*"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["t", "e", "s", "t", "*", "*"]`)
+
 ## Hex
 
 ### hex.convertFromString
