@@ -93,56 +93,56 @@ describe("Tests", function() {
 		});
 
 		i++;
-		it(`${i}: pad - Should pad the end if extra room`, function () {
+		it(`${i}: pad - Should pad the end if extra room`, function() {
 			let expected = "**test***";
 			let actual = helpful.pad("test", 9, "*");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: pad - Should cut the end of the padded characters if too long`, function () {
+		it(`${i}: pad - Should cut the end of the padded characters if too long`, function() {
 			let expected = "_a_test_a_-";
 			let actual = helpful.pad("test", 11, "_a_-");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: pad - Should cut the end of both sides if too long`, function () {
+		it(`${i}: pad - Should cut the end of both sides if too long`, function() {
 			let expected = "_a_test_a_";
 			let actual = helpful.pad("test", 10, "_a_-");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: padStart - Should pad only the beginning of the string`, function () {
+		it(`${i}: padStart - Should pad only the beginning of the string`, function() {
 			let expected = "**test";
 			let actual = helpful.padStart("test", 6, "*");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: padStart - Should cut the end of the padded characters if too long`, function () {
+		it(`${i}: padStart - Should cut the end of the padded characters if too long`, function() {
 			let expected = "_atest";
 			let actual = helpful.padStart("test", 6, "_a_-");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: padEnd - Should pad only the end of the string`, function () {
+		it(`${i}: padEnd - Should pad only the end of the string`, function() {
 			let expected = "test**";
 			let actual = helpful.padEnd("test", 6, "*");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: padEnd - Should cut the end of the padded characters if too long`, function () {
+		it(`${i}: padEnd - Should cut the end of the padded characters if too long`, function() {
 			let expected = "test_a";
 			let actual = helpful.padEnd("test", 6, "_a_-");
 			assert.equal(expected, actual);
 		});
 
 		i++;
-		it(`${i}: chunkArray - Should split array into n-sized chunks`, function () {
+		it(`${i}: chunkArray - Should split array into n-sized chunks`, function() {
 			let expected = [[1, 2, 3], [4, 5, 6]];
 			let actual = helpful.chunkArray([1, 2, 3, 4, 5, 6], 3);
 			assert.deepEqual(expected, actual);
@@ -156,21 +156,21 @@ describe("Tests", function() {
 		});
 
 		i++;
-		it(`${i}: average - Should calculate the average of an array`, function () {
+		it(`${i}: average - Should calculate the average of an array`, function() {
 			let expected = 2.75;
 			let actual = helpful.average([1, 2, 4, 4]);
 			assert.equal(expected, actual);
 		});
     
     i++;
-		it(`${i}: fillArray - Should return array filled with the given value`, function () {
+		it(`${i}: fillArray - Should return array filled with the given value`, function() {
 			let expected = [1, 1, 1, 1, 1, 1, 1];
 			let actual = helpful.fillArray([1, 2, 3, 4, 5, 6, 7], 1);
 			assert.deepEqual(expected, actual);
 		});
 		
 		i++;
-		it(`${i}: fillArray - Should fill array with the given value`, function () {
+		it(`${i}: fillArray - Should fill array with the given value`, function() {
 			let expected = ["*", "*", "*", "*"];
 			let actual = [1, 2, 3, 4];
 			helpful.fillArray(actual, "*");
@@ -178,35 +178,35 @@ describe("Tests", function() {
 		});
     
     i++;
-		it(`${i}: flatten - Should flatten a multidimensional array`, function () {
+		it(`${i}: flatten - Should flatten a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.flattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
 		});
     
     i++;
-		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function () {
+		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function() {
 			let expected = [0, 1, 2, [3, 4]];
 			let actual = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: deepFlatten - Should deep flatten a multidimensional array`, function () {
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.deepFlattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing a multidimensional array`, function () {
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3, 4];
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4]]]);
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing multiple inner multidimensional arrays`, function () {
+		it(`${i}: deepFlatten - Should deep flatten a multidimensional array containing multiple inner multidimensional arrays`, function() {
 			let expected = [0, 1, 2, 3, 4, 5, 6];
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
