@@ -273,7 +273,7 @@
 	}
 
 	const getPadArray = function(delimiter, size) {
-		return Array(size).fill(delimiter).flat().slice(0, size);
+		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
 	}
 
 	helpful.hex = {};
