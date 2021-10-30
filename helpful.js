@@ -276,6 +276,37 @@
 		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
 	}
 
+	const escapedChars = {
+		"&": "&amp;",
+		"<": "&lt;",
+		">": "&gt;",
+		"\"": "&quot;",
+		"'": "&#39;",
+	}
+
+	helpful.escape = function(string) {
+		if (string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		for (const escaped in escapedChars) {
+			result = result.replace(new RegExp(escaped, "g"), escapedChars[escaped]);
+		}
+		return result;
+	}
+
+	helpful.unescape = function(string) {
+		if (string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		// Should unescape `&` character for last
+		for (const escaped of Object.keys(escapedChars).reverse()) {
+			result = result.replace(new RegExp(escapedChars[escaped], "g"), escaped);
+		}
+		return result;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */

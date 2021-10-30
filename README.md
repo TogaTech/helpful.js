@@ -430,6 +430,28 @@ let array = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["t
 
 **Return Type:** Array (`["t", "e", "s", "t", "*", "*"]`)
 
+### escape
+Escapes HTML characters in a string by replacing them with their HTML entities.
+
+Escaped characters: `&`, `<` , `>`, `"`, `'`.
+```javascript
+let string = helpful.escape("<p>"); // "&lt;p&gt;"
+```
+**Parameters:**
+- string: string (`"<p>"`)
+
+**Return Type:** string (`"&lt;p&gt;"`)
+
+### unescape
+Reverse escapes HTML characters in a string by replacing them with their HTML entities.
+```javascript
+let string = helpful.unescape("&lt;p&gt;"); // "<p>"
+```
+**Parameters:**
+- string: string (`"&lt;p&gt;"`)
+
+**Return Type:** string (`"<p>"`)
+
 ## Hex
 
 ### hex.convertFromString

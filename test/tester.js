@@ -253,7 +253,36 @@ describe("Tests", function() {
 			let actual = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]);
 			assert.deepEqual(expected, actual);
 		});
+
+		i++;
+		it(`${i}: escape - Should escape HTML characters`, function () {
+			let expected = ["&lt;p&gt;"];
+			let actual = helpful.escape("<p>");
+			assert.equal(expected, actual);
+		});
 		
+		i++;
+		it(`${i}: escape - Should escape HTML entities`, function () {
+			let expected = ["&amp;lt;p&amp;gt;"];
+			let actual = helpful.escape("&lt;p&gt;");
+			assert.equal(expected, actual);
+		});
+				
+		i++;
+		it(`${i}: unescape - Should reverse escape HTML characters`, function () {
+			let expected = ["<p>"];
+			let actual = helpful.unescape("&lt;p&gt;");
+			assert.equal(expected, actual);
+		});
+
+		i++;
+		it(`${i}: unescape - Should reverse escape HTML entities`, function () {
+			let expected = ["&lt;p&gt;"];
+			let actual = helpful.unescape("&amp;lt;p&amp;gt;");
+			console.log(actual);
+			assert.equal(expected, actual);
+		});
+
 	});
 	describe("Hex", function() {
 		let i = 0;
