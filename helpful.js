@@ -307,6 +307,16 @@
 		return result;
 	}
 
+	helpful.mergeObjects = function(object1, object2) {
+		if (object1 === null) {
+			return object2;
+		}
+		if (object2 === null) {
+			return object1;
+		}
+		return { ...object2, ...object1 };
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */

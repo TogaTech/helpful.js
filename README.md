@@ -452,6 +452,18 @@ let string = helpful.unescape("&lt;p&gt;"); // "<p>"
 
 **Return Type:** string (`"<p>"`)
 
+### mergeObjects
+Merges two objects.
+In the case where both objects contain an identical key, the first object takes precedence.
+```javascript
+let object = helpful.mergeObjects({"a": 1}, {"b": 2}); // {"a": 1, "b": 2}
+```
+**Parameters:**
+- object: object1 (`{"a": 1}`)
+- object: object2 (`{"b": 2}`)
+
+**Return Type:** object (`{"a": 1, "b": 2}`)
+
 ## Hex
 
 ### hex.convertFromString

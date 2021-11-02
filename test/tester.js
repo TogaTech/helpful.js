@@ -279,8 +279,21 @@ describe("Tests", function() {
 		it(`${i}: unescape - Should reverse escape HTML entities`, function () {
 			let expected = ["&lt;p&gt;"];
 			let actual = helpful.unescape("&amp;lt;p&amp;gt;");
-			console.log(actual);
 			assert.equal(expected, actual);
+		});
+
+		i++;
+		it(`${i}: mergeObjects - Should merge two objects`, function () {
+			let expected = {"a": 1, "b": 2};
+			let actual = helpful.mergeObjects({"a": 1}, {"b": 2});
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: mergeObjects - Should merge two objects, giving the first object's keys precedence`, function () {
+			let expected = {"a": 1, "b": 2, "c": 4};
+			let actual = helpful.mergeObjects({"a": 1, "b": 2}, {"b": 3, "c": 4});
+			assert.deepEqual(expected, actual);
 		});
 
 	});
