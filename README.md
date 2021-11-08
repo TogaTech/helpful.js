@@ -390,6 +390,19 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
 
+### partitionArray
+ Partitions an array
+```javascript
+let partitionArray1 = helpful.partitionArray([1, 2, 3, 4], n => n > 2); // Array(2) [[3, 4], [1, 2]]
+let partitionArray2 = helpful.partitionArray([1, 2, 3, 4, 5], n => true); // Array(2) [[1, 2, 3, 4, 5], []]
+let partitionArray3 = helpful.partitionArray([1, 2, 3, 4, 5], n => false); // Array(2) [[], [1, 2, 3, 4, 5]]
+```
+**Parameters:**
+- array: Array (`[1, 2, 3, 4, 5]`)
+- function: Function(`n => n > 2`)
+
+**Return Type:** Array (`Array(2) [[3, 4, 5], [1, 2]]`)
+
 ## Hex
 
 ### hex.convertFromString

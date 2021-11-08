@@ -211,7 +211,28 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
-    
+
+		i++;
+		it(`${i}: partitionArray - Should return array partitioned based on the item > 2`, function() {
+			let expected = [[3, 4], [1, 2]];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => n > 2);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: partitionArray - Should return array partitioned based on the item = true`, function() {
+			let expected = [[1, 2, 3, 4], []];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => true);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: partitionArray - Should return array partitioned based on the item = false`, function() {
+			let expected = [[], [1, 2, 3, 4]];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => false);
+			assert.deepEqual(expected, actual);
+		});
+
 	});
 	describe("Hex", function() {
 		let i = 0;

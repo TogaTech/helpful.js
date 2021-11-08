@@ -235,6 +235,18 @@
 		return res;
 	}
 
+	helpful.partitionArray = function(array, callback) {
+		let pass = [];
+		let notPass = [];
+		pass = array.filter(function(item){
+			return callback(item);
+		});
+		notPass = array.filter(function(item){
+			return !callback(item);
+		});
+		return [pass, notPass];
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
