@@ -213,21 +213,21 @@ describe("Tests", function() {
 		});
 
 		i++;
-		it(`${i}: partitionArray - Should return array partitioned based on the item > 2`, function() {
+		it(`${i}: partitionArray - Should return array partitioned based on condition (item > 2)`, function() {
 			let expected = [[3, 4], [1, 2]];
 			let actual = helpful.partitionArray([1, 2, 3, 4], n => n > 2);
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: partitionArray - Should return array partitioned based on the item = true`, function() {
+		it(`${i}: partitionArray - Should return array partitioned based on condition  (item = true)`, function() {
 			let expected = [[1, 2, 3, 4], []];
 			let actual = helpful.partitionArray([1, 2, 3, 4], n => true);
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
-		it(`${i}: partitionArray - Should return array partitioned based on the item = false`, function() {
+		it(`${i}: partitionArray - Should return array partitioned based on condition (item = false)`, function() {
 			let expected = [[], [1, 2, 3, 4]];
 			let actual = helpful.partitionArray([1, 2, 3, 4], n => false);
 			assert.deepEqual(expected, actual);
