@@ -1,4 +1,4 @@
-(function (root, factory) {
+(function(root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		define([], factory);
 	} else if (typeof module === 'object' && module.exports) {
@@ -6,7 +6,7 @@
 	} else {
 		root.returnExports = factory();
 	}
-}(typeof self !== 'undefined' ? self : this, function () {
+}(typeof self !== 'undefined' ? self : this, function() {
 	const helpful = {};
 
 	helpful.stringToArray = function(string) {
@@ -83,6 +83,156 @@
 			}
 		}
 		return clone;
+	}
+
+	helpful.average = function(array) {
+		if(array == null ) {
+			return [];
+		}
+		let sum = 0;
+		for(let i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		let average = sum / array.length ;
+		return average;
+	}
+
+	helpful.shuffleArray = function(array) {
+		if(array == null) {
+			return [];
+		}
+		let result = [];
+		let copy = array.slice();
+		while( copy.length ){
+			result.push(...copy.splice(Math.floor(Math.random() * copy.length), 1));
+		}
+		return result;
+	}
+
+	helpful.reverseArray = function(array) {
+		if(array == null) {
+			return [];
+		}
+		let result = [];
+		let copy = array.slice();
+		while( copy.length ){
+			result.unshift(copy.shift());
+		}
+		return result;
+	}
+
+	function getPadString(delimiter, size) {
+		return delimiter.repeat(size / delimiter.length) + delimiter.substring(0, size % delimiter.length);
+	}
+
+	helpful.pad = function(string, size, delimiter = " ") {
+		if (string == null) {
+			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const leftPad = getPadString(delimiter, Math.floor(availableChars / 2));
+		const rightPad = getPadString(delimiter, Math.ceil(availableChars / 2))
+		return `${leftPad}${string}${rightPad}`;
+	}
+
+	helpful.padStart = function(string, size, delimiter = " ") {
+		if (string == null) {
+			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const pad = getPadString(delimiter, availableChars);
+		return `${pad}${string}`;
+	}
+
+	helpful.padEnd = function(string, size, delimiter = " ") {
+		if (string == null) {
+			return "";
+		}
+		if(size == null) {
+			return string;
+		}
+		if(delimiter == null) {
+			delimiter = " ";
+		}
+		const availableChars = size - string.length;
+		if (availableChars <= 0) {
+			return string;
+		}
+		const pad = getPadString(delimiter, availableChars);
+		return `${string}${pad}`;
+	}
+
+	helpful.chunkArray = function(array, n) {
+		if(array == null) {
+			return [];
+		}
+		if(n == null) {
+			return array;
+		}
+		const res = [];
+		const numberOfChunks = Math.ceil(array.length / n);
+		let from = 0;
+		while(res.length < numberOfChunks) {
+			const to = from + n;
+			res.push(array.slice(from, to));
+			from = to;
+		}
+		return res;
+	}
+  
+  
+	helpful.fillArray = function(array, object) {
+		if(array == null) {
+			return [];
+		}
+		for(let i = 0; i < array.length; i++) {
+			array[i] = object
+		}
+		return array;
+  }
+  
+  helpful.flattenArray = function(array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
+			if(Array.isArray(item)) {
+				res.push(...item);
+			} else {
+				res.push(item);
+			}
+		}
+		return res;
+	}
+
+	helpful.deepFlattenArray = function(array) {
+		let res = [];
+		for(let i = 0; i < array.length; i++) {
+      let item = array[i];
+			if(Array.isArray(item)) {
+				res.push(...this.deepFlattenArray(item));
+			} else {
+				res.push(item);
+			}
+		}
+		return res;
 	}
 
 	helpful.hex = {};
