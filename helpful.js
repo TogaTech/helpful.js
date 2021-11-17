@@ -235,6 +235,22 @@
 		return res;
 	}
 
+	helpful.differenceOfObjects = function(object1, object2){
+		if(Object.keys(object1).length === 0 || Object.keys(object2).length === 0) {
+			return [];
+		}
+		let array1 = Object.keys(object1);
+		let array2 = Object.keys(object2);
+		for(let i = 0; i < array1.length; i++){
+			for(let j = 0; j < array2.length; j++){
+				if(array1[i] == array2[j]){
+					delete object1[array1[i]]; 
+				}
+			}
+		}
+		return object1;
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */

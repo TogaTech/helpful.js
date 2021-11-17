@@ -390,6 +390,17 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
 
+### differenceOfObjects
+Finds the difference of two objects (any keys that are present in the second object are removed from the first)
+```javascript
+let differenceOfObjs = helpful.differenceOfObjects({"a": 1, "b": 2}, {"b": 3, "c": 4}); // {"a": 1}
+```
+**Parameters:**
+- object1: Object (`{"a": 1, "b": 2}`)
+- object2: Object (`{"b": 3, "c": 4}`)
+
+**Return Type:** Object (`{"a": 1}`)
+
 ## Hex
 
 ### hex.convertFromString
