@@ -390,15 +390,16 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
 
-### average
-Find the average of an array
+### differenceOfObjects
+Finds the difference of two objects (any keys that are present in the second object are removed from the first)
 ```javascript
-let averageOfArray = helpful.average([1, 2, 4, 4]); // 2.75
+let differenceOfObjs = helpful.differenceOfObjects({"a": 1, "b": 2}, {"b": 3, "c": 4}); // {"a": 1}
 ```
 **Parameters:**
-- array: Array (`[1, 2, 4, 4]`)
+- object1: Object (`{"a": 1, "b": 2}`)
+- object2: Object (`{"b": 3, "c": 4}`)
 
-**Return Type:** Number (`2.75`)
+**Return Type:** Object (`{"a": 1}`)
 
 ## Hex
 

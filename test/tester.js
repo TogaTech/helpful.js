@@ -211,6 +211,13 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
+
+		i++;
+		it(`${i}: differenceOfObjects - Should remove any keys from the first object that are presented in the second object`, function() {
+			let expected = {"a": 1};
+			let actual = helpful.differenceOfObjects({"a": 1, "b": 2}, {"b": 3, "c": 4});
+			assert.deepEqual(expected, actual);
+		});
     
 	});
 	describe("Hex", function() {
