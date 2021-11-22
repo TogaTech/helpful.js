@@ -295,5 +295,17 @@
 		return bytes;
 	}
 
+	helpful.partitionObject =  function(obj, func) {
+		const toArray = Object.entries(obj);
+		const filteredArray = toArray.filter(func);
+		const filteredArraySet = new Set (filteredArray);
+		const filteredArray2 = toArray.filter(e => !filteredArraySet.has(e));
+		const toObjt1 = Object.fromEntries(filteredArray);
+		const toObjt2 = Object.fromEntries(filteredArray2);
+		const result = [toObjt1, toObjt2];
+
+		return result;
+	}
+
 	return helpful;
 }));

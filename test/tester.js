@@ -211,6 +211,39 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
+		
+		i++;
+		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
+			const score = {
+				"Nat": 8,
+				"Mia": 10,
+				"Jack": 7,
+				"Sunny": 6,
+			};
+			function sort([key, value]) {
+				return key !== "Jack"
+			}
+			let expected = [ { Nat: 8, Mia: 10, Sunny: 6 }, { Jack: 7 } ]
+			let actual = helpful.partitionObject(score, sort);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
+			const score = {
+				"Nat": 8,
+				"Mia": 10,
+				"Jack": 7,
+				"Sunny": 6,
+			};
+			function sort([key, value]) {
+				return value >= 8
+			}
+			let expected = [ { Nat: 8, Mia: 10 }, { Jack: 7, Sunny: 6 } ]
+			let actual = helpful.partitionObject(score, sort);
+			assert.deepEqual(expected, actual)
+		})
+
     
 	});
 	describe("Hex", function() {
