@@ -212,7 +212,7 @@
   helpful.flattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...item);
 			} else {
@@ -225,7 +225,7 @@
 	helpful.deepFlattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...this.deepFlattenArray(item));
 			} else {
@@ -233,6 +233,88 @@
 			}
 		}
 		return res;
+	}
+
+	helpful.padArray = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const leftPad = getPadArray(delimiter, Math.floor(availableSpaces / 2));
+		const rightPad = getPadArray(delimiter, Math.ceil(availableSpaces / 2));
+		return [ ...leftPad, ...array, ...rightPad ];
+	}
+
+	helpful.padArrayStart = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...pad, ...array ];
+	}
+
+	helpful.padArrayEnd = function(array, size, delimiter) {
+		if (array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if (availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...array, ...pad ];
+	}
+
+	const getPadArray = function(delimiter, size) {
+		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
+	}
+
+	const escapedChars = {
+		"&": "&amp;",
+		"<": "&lt;",
+		">": "&gt;",
+		"\"": "&quot;",
+		"'": "&#39;",
+	}
+
+	helpful.escape = function(string) {
+		if (string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		for (const escaped in escapedChars) {
+			result = result.replace(new RegExp(escaped, "g"), escapedChars[escaped]);
+		}
+		return result;
+	}
+
+	helpful.unescape = function(string) {
+		if (string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		// Should unescape `&` character for last
+		for (const escaped of Object.keys(escapedChars).reverse()) {
+			result = result.replace(new RegExp(escapedChars[escaped], "g"), escaped);
+		}
+		return result;
+	}
+
+	helpful.mergeObjects = function(object1, object2) {
+		if (object1 === null) {
+			return object2;
+		}
+		if (object2 === null) {
+			return object1;
+		}
+		return { ...object2, ...object1 };
 	}
 
 	helpful.hex = {};

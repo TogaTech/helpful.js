@@ -390,6 +390,80 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
 
+### padArray
+Pad an array adding elements on the left and right side of it until the array reach a certain size.
+
+Padding is added evenly on both sides, but if there is an odd number of padding elements, the extra
+padding element is added to the end of the array.
+The default padding element is `undefined`.
+```javascript
+let array = helpful.padArray(["t", "e", "s", "t"], 8, ["*"]); // Array(8) ["*", "*", "t", "e", "s", "t", "*", "*"]
+```
+**Parameters:**
+- array: array (`["t", "e", "s", "t"]`)
+- number: size (`8`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t" "*", "*"]`)
+
+### padArrayStart
+Pad an array adding elements on the left side of it until the array reach a certain size.
+```javascript
+let array = helpful.padArrayStart(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["*", "*", "t", "e", "s", "t"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t"]`)
+
+### padArrayEnd
+Pad an array adding elements on the right side of it until the array reach a certain size.
+```javascript
+let array = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["t", "e", "s", "t", "*", "*"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["t", "e", "s", "t", "*", "*"]`)
+
+### escape
+Escapes HTML characters in a string by replacing them with their HTML entities.
+
+Escaped characters: `&`, `<` , `>`, `"`, `'`.
+```javascript
+let string = helpful.escape("<p>"); // "&lt;p&gt;"
+```
+**Parameters:**
+- string: string (`"<p>"`)
+
+**Return Type:** string (`"&lt;p&gt;"`)
+
+### unescape
+Reverse escapes HTML characters in a string by replacing them with their HTML entities.
+```javascript
+let string = helpful.unescape("&lt;p&gt;"); // "<p>"
+```
+**Parameters:**
+- string: string (`"&lt;p&gt;"`)
+
+**Return Type:** string (`"<p>"`)
+
+### mergeObjects
+Merges two objects.
+In the case where both objects contain an identical key, the first object takes precedence.
+```javascript
+let object = helpful.mergeObjects({"a": 1}, {"b": 2}); // {"a": 1, "b": 2}
+```
+**Parameters:**
+- object: object1 (`{"a": 1}`)
+- object: object2 (`{"b": 2}`)
+
+**Return Type:** object (`{"a": 1, "b": 2}`)
+
 ## Hex
 
 ### hex.convertFromString
