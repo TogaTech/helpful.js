@@ -126,7 +126,7 @@
 	}
 
 	helpful.pad = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -136,7 +136,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const leftPad = getPadString(delimiter, Math.floor(availableChars / 2));
@@ -145,7 +145,7 @@
 	}
 
 	helpful.padStart = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -155,7 +155,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const pad = getPadString(delimiter, availableChars);
@@ -163,7 +163,7 @@
 	}
 
 	helpful.padEnd = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -173,7 +173,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const pad = getPadString(delimiter, availableChars);
@@ -235,12 +235,16 @@
 		return res;
 	}
 
+	const getPadArray = function(delimiter, size) {
+		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
+	}
+
 	helpful.padArray = function(array, size, delimiter) {
-		if (array === null) {
+		if(array === null) {
 			return [];
 		}
 		const availableSpaces = size - array.length;
-		if (availableSpaces <= 0) {
+		if(availableSpaces <= 0) {
 			return array;
 		}
 		const leftPad = getPadArray(delimiter, Math.floor(availableSpaces / 2));
@@ -249,11 +253,11 @@
 	}
 
 	helpful.padArrayStart = function(array, size, delimiter) {
-		if (array === null) {
+		if(array === null) {
 			return [];
 		}
 		const availableSpaces = size - array.length;
-		if (availableSpaces <= 0) {
+		if(availableSpaces <= 0) {
 			return array;
 		}
 		const pad = getPadArray(delimiter, availableSpaces);
@@ -261,57 +265,53 @@
 	}
 
 	helpful.padArrayEnd = function(array, size, delimiter) {
-		if (array === null) {
+		if(array === null) {
 			return [];
 		}
 		const availableSpaces = size - array.length;
-		if (availableSpaces <= 0) {
+		if(availableSpaces <= 0) {
 			return array;
 		}
 		const pad = getPadArray(delimiter, availableSpaces);
 		return [ ...array, ...pad ];
 	}
 
-	const getPadArray = function(delimiter, size) {
-		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
-	}
-
-	const escapedChars = {
-		"&": "&amp;",
-		"<": "&lt;",
-		">": "&gt;",
-		"\"": "&quot;",
-		"'": "&#39;",
-	}
+	const escapedChars = [
+		{character: "&", replacement: "&amp;"},
+		{character: "<", replacement: "&lt;"},
+		{character: ">", replacement: "&gt;"},
+		{character: "\"", replacement: "&quot;"},
+		{character: "'", replacement: "&#39;"},
+	]
 
 	helpful.escape = function(string) {
-		if (string === null || typeof string !== 'string') {
+		if(string === null || typeof string !== 'string') {
 			return string;
 		}
 		let result = string;
-		for (const escaped in escapedChars) {
-			result = result.replace(new RegExp(escaped, "g"), escapedChars[escaped]);
+		for(let i = 0; i < escapedChars.length; i++) {
+			result = result.replace(new RegExp(escapedChars[i].character, "g"), escapedChars[i].replacement);
 		}
 		return result;
 	}
 
 	helpful.unescape = function(string) {
-		if (string === null || typeof string !== 'string') {
+		if(string === null || typeof string !== 'string') {
 			return string;
 		}
 		let result = string;
 		// Should unescape `&` character for last
-		for (const escaped of Object.keys(escapedChars).reverse()) {
-			result = result.replace(new RegExp(escapedChars[escaped], "g"), escaped);
+		for(let i = escapedChars.length - 1; i >= 0; i--) {
+			result = result.replace(new RegExp(escapedChars[i].replacement, "g"), escapedChars[i].character);
 		}
 		return result;
 	}
 
 	helpful.mergeObjects = function(object1, object2) {
-		if (object1 === null) {
+		if(object1 === null) {
 			return object2;
 		}
-		if (object2 === null) {
+		if(object2 === null) {
 			return object1;
 		}
 		return { ...object2, ...object1 };

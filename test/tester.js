@@ -67,7 +67,7 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
-    
+
 		i++;
 		it(`${i}: shuffleArray - Should shuffle array`, function() {
 			let unshuffled = [1, 2, 3, 4, 5, 6, 7];
@@ -161,8 +161,8 @@ describe("Tests", function() {
 			let actual = helpful.average([1, 2, 4, 4]);
 			assert.equal(expected, actual);
 		});
-    
-    i++;
+
+		i++;
 		it(`${i}: fillArray - Should return array filled with the given value`, function() {
 			let expected = [1, 1, 1, 1, 1, 1, 1];
 			let actual = helpful.fillArray([1, 2, 3, 4, 5, 6, 7], 1);
@@ -172,19 +172,20 @@ describe("Tests", function() {
 		i++;
 		it(`${i}: fillArray - Should fill array with the given value`, function() {
 			let expected = ["*", "*", "*", "*"];
-			let actual = [1, 2, 3, 4];
-			helpful.fillArray(actual, "*");
-			assert.deepEqual(expected, actual);
+			let actual1 = [1, 2, 3, 4];
+			let actual2 = helpful.fillArray(actual1, "*");
+			assert.deepEqual(expected, actual1);
+			assert.deepEqual(expected, actual2);
 		});
-    
-    	i++;
+
+		i++;
 		it(`${i}: flatten - Should flatten a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.flattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
 		});
-    
-    	i++;
+
+		i++;
 		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function() {
 			let expected = [0, 1, 2, [3, 4]];
 			let actual = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
@@ -211,7 +212,7 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
-    
+
 		i++;
 		it(`${i}: padArray - Should default pad an array with undefined`, function () {
 			let expected = [undefined, undefined, "t", "e", "s", "t", undefined, undefined];
@@ -256,28 +257,28 @@ describe("Tests", function() {
 
 		i++;
 		it(`${i}: escape - Should escape HTML characters`, function () {
-			let expected = ["&lt;p&gt;"];
+			let expected = "&lt;p&gt;";
 			let actual = helpful.escape("<p>");
 			assert.equal(expected, actual);
 		});
 		
 		i++;
 		it(`${i}: escape - Should escape HTML entities`, function () {
-			let expected = ["&amp;lt;p&amp;gt;"];
+			let expected = "&amp;lt;p&amp;gt;";
 			let actual = helpful.escape("&lt;p&gt;");
 			assert.equal(expected, actual);
 		});
 				
 		i++;
 		it(`${i}: unescape - Should reverse escape HTML characters`, function () {
-			let expected = ["<p>"];
+			let expected = "<p>";
 			let actual = helpful.unescape("&lt;p&gt;");
 			assert.equal(expected, actual);
 		});
 
 		i++;
 		it(`${i}: unescape - Should reverse escape HTML entities`, function () {
-			let expected = ["&lt;p&gt;"];
+			let expected = "&lt;p&gt;";
 			let actual = helpful.unescape("&amp;lt;p&amp;gt;");
 			assert.equal(expected, actual);
 		});
