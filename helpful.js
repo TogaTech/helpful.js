@@ -4,7 +4,7 @@
 	} else if (typeof module === 'object' && module.exports) {
 		module.exports = factory();
 	} else {
-		root.returnExports = factory();
+		root.helpful = factory();
 	}
 }(typeof self !== 'undefined' ? self : this, function() {
 	const helpful = {};
