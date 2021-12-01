@@ -1,4 +1,4 @@
-(function(root, factory) {
+(function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		define([], factory);
 	} else if (typeof module === 'object' && module.exports) {
@@ -6,60 +6,60 @@
 	} else {
 		root.returnExports = factory();
 	}
-}(typeof self !== 'undefined' ? self : this, function() {
+}(typeof self !== 'undefined' ? self : this, function () {
 	const helpful = {};
 
-	helpful.stringToArray = function(string) {
-		if(string == null) {
+	helpful.stringToArray = function (string) {
+		if (string == null) {
 			return "";
 		}
 		let array = [];
-		for(let i = 0; i < string.length; i++) {
+		for (let i = 0; i < string.length; i++) {
 			array.push(string[i]);
 		}
 		return array;
 	}
 
-	helpful.duplicateArray = function(array) {
-		if(array == null) {
+	helpful.duplicateArray = function (array) {
+		if (array == null) {
 			return [];
 		}
 		let duplicated = [];
-		for(let i = 0; i < array.length; i++) {
+		for (let i = 0; i < array.length; i++) {
 			duplicated.push(array[i]);
 		}
 		return duplicated;
 	}
 
-	helpful.differenceOfArrays = function(array1, array2) {
-		if(array1 == null || array2 == null) {
+	helpful.differenceOfArrays = function (array1, array2) {
+		if (array1 == null || array2 == null) {
 			return [];
 		}
 		return array1.filter(value => !array2.includes(value));
 	}
 
-	helpful.sumOfArrays = function(array1, array2) {
-		if(array1 == null || array2 == null) {
+	helpful.sumOfArrays = function (array1, array2) {
+		if (array1 == null || array2 == null) {
 			return [];
 		}
 		let sum = [];
-		for(let i = 0; i < array1.length; i++) {
+		for (let i = 0; i < array1.length; i++) {
 			sum.push(array1[i]);
 		}
-		for(let i = 0; i < array2.length; i++) {
+		for (let i = 0; i < array2.length; i++) {
 			sum.push(array2[i]);
 		}
 		return sum;
 	}
 
-	helpful.capitalize = function(string) {
-		if(string == null) {
+	helpful.capitalize = function (string) {
+		if (string == null) {
 			return "";
 		}
-		if(typeof string !== "string") {
+		if (typeof string !== "string") {
 			return string;
 		}
-		if(string.split(" ").length > 1) {
+		if (string.split(" ").length > 1) {
 			const result = string.split(" ").reduce((acc, value) => {
 				const [firstLetter, ...rest] = value;
 				acc += `${firstLetter.toUpperCase()}${rest.join("").toLowerCase()} `;
@@ -72,50 +72,50 @@
 		return `${firstLetter.toUpperCase()}${rest.join("").toLowerCase()}`;
 	};
 
-	helpful.mergeArrays = function(array1, array2) {
-		if(array1 == null || array2 == null) {
+	helpful.mergeArrays = function (array1, array2) {
+		if (array1 == null || array2 == null) {
 			return [];
 		}
 		const clone = array1.slice();
-		for(let i = 0; i < array2.length; i++) {
-			if(!clone.includes(array2[i])) {
+		for (let i = 0; i < array2.length; i++) {
+			if (!clone.includes(array2[i])) {
 				clone.push(array2[i]);
 			}
 		}
 		return clone;
 	}
 
-	helpful.average = function(array) {
-		if(array == null ) {
+	helpful.average = function (array) {
+		if (array == null) {
 			return [];
 		}
 		let sum = 0;
-		for(let i = 0; i < array.length; i++) {
+		for (let i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		let average = sum / array.length ;
+		let average = sum / array.length;
 		return average;
 	}
 
-	helpful.shuffleArray = function(array) {
-		if(array == null) {
+	helpful.shuffleArray = function (array) {
+		if (array == null) {
 			return [];
 		}
 		let result = [];
 		let copy = array.slice();
-		while( copy.length ){
+		while (copy.length) {
 			result.push(...copy.splice(Math.floor(Math.random() * copy.length), 1));
 		}
 		return result;
 	}
 
-	helpful.reverseArray = function(array) {
-		if(array == null) {
+	helpful.reverseArray = function (array) {
+		if (array == null) {
 			return [];
 		}
 		let result = [];
 		let copy = array.slice();
-		while( copy.length ){
+		while (copy.length) {
 			result.unshift(copy.shift());
 		}
 		return result;
@@ -125,14 +125,14 @@
 		return delimiter.repeat(size / delimiter.length) + delimiter.substring(0, size % delimiter.length);
 	}
 
-	helpful.pad = function(string, size, delimiter = " ") {
+	helpful.pad = function (string, size, delimiter = " ") {
 		if (string == null) {
 			return "";
 		}
-		if(size == null) {
+		if (size == null) {
 			return string;
 		}
-		if(delimiter == null) {
+		if (delimiter == null) {
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
@@ -144,14 +144,14 @@
 		return `${leftPad}${string}${rightPad}`;
 	}
 
-	helpful.padStart = function(string, size, delimiter = " ") {
+	helpful.padStart = function (string, size, delimiter = " ") {
 		if (string == null) {
 			return "";
 		}
-		if(size == null) {
+		if (size == null) {
 			return string;
 		}
-		if(delimiter == null) {
+		if (delimiter == null) {
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
@@ -162,14 +162,14 @@
 		return `${pad}${string}`;
 	}
 
-	helpful.padEnd = function(string, size, delimiter = " ") {
+	helpful.padEnd = function (string, size, delimiter = " ") {
 		if (string == null) {
 			return "";
 		}
-		if(size == null) {
+		if (size == null) {
 			return string;
 		}
-		if(delimiter == null) {
+		if (delimiter == null) {
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
@@ -180,40 +180,40 @@
 		return `${string}${pad}`;
 	}
 
-	helpful.chunkArray = function(array, n) {
-		if(array == null) {
+	helpful.chunkArray = function (array, n) {
+		if (array == null) {
 			return [];
 		}
-		if(n == null) {
+		if (n == null) {
 			return array;
 		}
 		const res = [];
 		const numberOfChunks = Math.ceil(array.length / n);
 		let from = 0;
-		while(res.length < numberOfChunks) {
+		while (res.length < numberOfChunks) {
 			const to = from + n;
 			res.push(array.slice(from, to));
 			from = to;
 		}
 		return res;
 	}
-  
-  
-	helpful.fillArray = function(array, object) {
-		if(array == null) {
+
+
+	helpful.fillArray = function (array, object) {
+		if (array == null) {
 			return [];
 		}
-		for(let i = 0; i < array.length; i++) {
+		for (let i = 0; i < array.length; i++) {
 			array[i] = object
 		}
 		return array;
-  }
-  
-  helpful.flattenArray = function(array) {
+	}
+
+	helpful.flattenArray = function (array) {
 		let res = [];
-		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
-			if(Array.isArray(item)) {
+		for (let i = 0; i < array.length; i++) {
+			let item = array[i];
+			if (Array.isArray(item)) {
 				res.push(...item);
 			} else {
 				res.push(item);
@@ -222,11 +222,11 @@
 		return res;
 	}
 
-	helpful.deepFlattenArray = function(array) {
+	helpful.deepFlattenArray = function (array) {
 		let res = [];
-		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
-			if(Array.isArray(item)) {
+		for (let i = 0; i < array.length; i++) {
+			let item = array[i];
+			if (Array.isArray(item)) {
 				res.push(...this.deepFlattenArray(item));
 			} else {
 				res.push(item);
@@ -235,17 +235,30 @@
 		return res;
 	}
 
+	helpful.partitionObject = function (obj, func) {
+		let obj1 = {};
+		let obj2 = {};
+		for(let key in obj) {
+			if (func(key, obj[key])) {
+				obj1[key] = obj[key];
+			}else {
+				obj2[key] = obj[key];
+			}
+		}
+		return [obj1, obj2];
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertFromString = function(string) {
-		if(string == null) {
+	helpful.hex.convertFromString = function (string) {
+		if (string == null) {
 			return "";
 		}
 		let hex = "";
-		for(let i = 0; i < string.length; i++) {
+		for (let i = 0; i < string.length; i++) {
 			let c = string.charCodeAt(i).toString(16);
-			while(c.length < 2) {
+			while (c.length < 2) {
 				c = "0" + c;
 			}
 			hex += c;
@@ -254,27 +267,27 @@
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertToString = function(hex) {
-		if(hex == null) {
+	helpful.hex.convertToString = function (hex) {
+		if (hex == null) {
 			return "";
 		}
 		let string = "";
-		for(let i = 0; i < hex.length; i += 2) {
+		for (let i = 0; i < hex.length; i += 2) {
 			string += String.fromCharCode(parseInt(hex.substring(i, i + 2), 16));
 		}
 		return string;
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertFromBytes = function(bytes) {
-		if(bytes == null || !(bytes instanceof Uint8Array)) {
+	helpful.hex.convertFromBytes = function (bytes) {
+		if (bytes == null || !(bytes instanceof Uint8Array)) {
 			return "";
 		}
 		let hex = "";
-		for(let i = 0; i < bytes.length; i++) {
-			if(bytes[i].toString(16).length == 0) {
+		for (let i = 0; i < bytes.length; i++) {
+			if (bytes[i].toString(16).length == 0) {
 				hex += "00";
-			} else if(bytes[i].toString(16).length == 1) {
+			} else if (bytes[i].toString(16).length == 1) {
 				hex += "0" + bytes[i].toString(16);
 			} else {
 				hex += bytes[i].toString(16);
@@ -284,27 +297,15 @@
 	}
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
-	helpful.hex.convertToBytes = function(hex) {
-		if(hex == null) {
+	helpful.hex.convertToBytes = function (hex) {
+		if (hex == null) {
 			return new Uint8Array();
 		}
 		let bytes = new Uint8Array(hex.length / 2);
-		for(let i = 0; i < hex.length; i += 2) {
+		for (let i = 0; i < hex.length; i += 2) {
 			bytes[i / 2] = parseInt(hex.substring(i, i + 2), 16);
 		}
 		return bytes;
-	}
-
-	helpful.partitionObject =  function(obj, func) {
-		const toArray = Object.entries(obj);
-		const filteredArray = toArray.filter(func);
-		const filteredArraySet = new Set (filteredArray);
-		const filteredArray2 = toArray.filter(e => !filteredArraySet.has(e));
-		const toObjt1 = Object.fromEntries(filteredArray);
-		const toObjt2 = Object.fromEntries(filteredArray2);
-		const result = [toObjt1, toObjt2];
-
-		return result;
 	}
 
 	return helpful;

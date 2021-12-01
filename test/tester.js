@@ -214,34 +214,17 @@ describe("Tests", function() {
 		
 		i++;
 		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
-			const score = {
-				"Nat": 8,
-				"Mia": 10,
-				"Jack": 7,
-				"Sunny": 6,
-			};
-			function sort([key, value]) {
-				return key !== "Jack"
-			}
-			let expected = [ { Nat: 8, Mia: 10, Sunny: 6 }, { Jack: 7 } ]
-			let actual = helpful.partitionObject(score, sort);
+			let expected = [{"a": 1}, {"b": 2, "c": 3, "d": 4}];
+			let actual = helpful.partitionObject({"a": 1, "b": 2, "c": 3, "d": 4}, (key, value) => key == "a");
+			;
 			assert.deepEqual(expected, actual);
 		});
 
 		i++;
 		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
-			const score = {
-				"Nat": 8,
-				"Mia": 10,
-				"Jack": 7,
-				"Sunny": 6,
-			};
-			function sort([key, value]) {
-				return value >= 8
-			}
-			let expected = [ { Nat: 8, Mia: 10 }, { Jack: 7, Sunny: 6 } ]
-			let actual = helpful.partitionObject(score, sort);
-			assert.deepEqual(expected, actual)
+			let expected = [{"c": 3, "d": 4}, {"a": 1, "b": 2}];
+			let actual = helpful.partitionObject({"a": 1, "b": 2, "c": 3, "d": 4}, (key, value) => value > 2);
+			assert.deepEqual(expected, actual);
 		})
 
     
