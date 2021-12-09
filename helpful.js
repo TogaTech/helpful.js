@@ -314,7 +314,16 @@
 		if(object2 === null) {
 			return object1;
 		}
-		return { ...object2, ...object1 };
+		let keys1 = Object.keys(object1);
+		let keys2 = Object.keys(object2);
+		let returnObject = {};
+		for(let i = 0; i < keys2.length; i++) {
+			returnObject[keys2[i]] = object2[keys2[i]];
+		}
+		for(let i = 0; i < keys1.length; i++) {
+			returnObject[keys1[i]] = object1[keys1[i]];
+		}
+		return returnObject;
 	}
 
 	helpful.hex = {};
