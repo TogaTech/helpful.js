@@ -297,6 +297,27 @@ describe("Tests", function() {
 			assert.deepEqual(expected, actual);
 		});
 
+		i++;
+		it(`${i}: duplicateObject - Should duplicate an object`, function () {
+			let expected = {a: '1', b: 2, c: false, d: undefined, e: null};
+			let actual = helpful.duplicateObject(expected);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: deepDuplicateObject - Should duplicate an object and all inner objects and arrays`, function () {
+			let expected = {a: 1, b: 'b', c: undefined, d: null, e: true, f: {g: ['h', 'i', {j: 'k'}]}};
+			let actual = helpful.deepDuplicateObject(expected);
+			assert.deepEqual(expected, actual)
+		});
+
+		i++;
+		it(`${i}: deepDuplicateArray - Should duplicate an array and all inner objects and arrays`, function () {
+			let expected = [1, 'a', undefined, null, true, {b: ['c', 'd', {e: 'f', g: 2}]}];
+			let actual = helpful.deepDuplicateArray(expected);
+			assert.deepEqual(expected, actual);
+		});
+
 	});
 	describe("Hex", function() {
 		let i = 0;
