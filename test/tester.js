@@ -67,7 +67,7 @@ describe("Tests", function() {
 			let actual = helpful.mergeArrays([2, 4, 6], [6, 8, 10, 4, 1, 2]);
 			assert.deepEqual(expected, actual);
 		});
-    
+
 		i++;
 		it(`${i}: shuffleArray - Should shuffle array`, function() {
 			let unshuffled = [1, 2, 3, 4, 5, 6, 7];
@@ -161,8 +161,8 @@ describe("Tests", function() {
 			let actual = helpful.average([1, 2, 4, 4]);
 			assert.equal(expected, actual);
 		});
-    
-    i++;
+
+		i++;
 		it(`${i}: fillArray - Should return array filled with the given value`, function() {
 			let expected = [1, 1, 1, 1, 1, 1, 1];
 			let actual = helpful.fillArray([1, 2, 3, 4, 5, 6, 7], 1);
@@ -172,19 +172,20 @@ describe("Tests", function() {
 		i++;
 		it(`${i}: fillArray - Should fill array with the given value`, function() {
 			let expected = ["*", "*", "*", "*"];
-			let actual = [1, 2, 3, 4];
-			helpful.fillArray(actual, "*");
-			assert.deepEqual(expected, actual);
+			let actual1 = [1, 2, 3, 4];
+			let actual2 = helpful.fillArray(actual1, "*");
+			assert.deepEqual(expected, actual1);
+			assert.deepEqual(expected, actual2);
 		});
-    
-    i++;
+
+		i++;
 		it(`${i}: flatten - Should flatten a multidimensional array`, function() {
 			let expected = [0, 1, 2, 3];
 			let actual = helpful.flattenArray([[0, 1], [2, 3]]);
 			assert.deepEqual(expected, actual);
 		});
-    
-    i++;
+
+		i++;
 		it(`${i}: flatten - Should flatten a multidimensional array containing a multidimensional array`, function() {
 			let expected = [0, 1, 2, [3, 4]];
 			let actual = helpful.flattenArray([[0, 1], [2, [3, 4]]]);
@@ -211,6 +212,88 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
+    
+		it(`${i}: padArray - Should default pad an array with undefined`, function () {
+			let expected = [undefined, undefined, "t", "e", "s", "t", undefined, undefined];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 8);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArray - Should pad an array end if extra room`, function () {
+			let expected = ["*", "*", "t", "e", "s", "t", "*", "*", "*"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 9, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++
+		it(`${i}: padArray - Should cut the end of the padding array on one side if too long`, function () {
+			let expected = ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_", "-"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 11, ["_", "a", "_", "-"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArray - Should cut the end of the padding array on both sides if too long`, function () {
+			let expected = ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_"];
+			let actual = helpful.padArray(["t", "e", "s", "t"], 10, ["_", "a", "_", "-"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArrayStart - Should pad only the beginning of the array`, function () {
+			let expected = ["*", "*", "t", "e", "s", "t"];
+			let actual = helpful.padArrayStart(["t", "e", "s", "t"], 6, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: padArrayEnd - Should pad only the end of the array`, function () {
+			let expected = ["t", "e", "s", "t", "*", "*"];
+			let actual = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: escape - Should escape HTML characters`, function () {
+			let expected = "&lt;p&gt;";
+			let actual = helpful.escape("<p>");
+			assert.equal(expected, actual);
+		});
+		
+		i++;
+		it(`${i}: escape - Should escape HTML entities`, function () {
+			let expected = "&amp;lt;p&amp;gt;";
+			let actual = helpful.escape("&lt;p&gt;");
+			assert.equal(expected, actual);
+		});
+				
+		i++;
+		it(`${i}: unescape - Should reverse escape HTML characters`, function () {
+			let expected = "<p>";
+			let actual = helpful.unescape("&lt;p&gt;");
+			assert.equal(expected, actual);
+		});
+
+		i++;
+		it(`${i}: unescape - Should reverse escape HTML entities`, function () {
+			let expected = "&lt;p&gt;";
+			let actual = helpful.unescape("&amp;lt;p&amp;gt;");
+			assert.equal(expected, actual);
+		});
+
+		i++;
+		it(`${i}: mergeObjects - Should merge two objects`, function () {
+			let expected = {"a": 1, "b": 2};
+			let actual = helpful.mergeObjects({"a": 1}, {"b": 2});
+			assert.deepEqual(expected, actual);
+		});
+      
+		it(`${i}: mergeObjects - Should merge two objects, giving the first object's keys precedence`, function () {
+			let expected = {"a": 1, "b": 2, "c": 4};
+			let actual = helpful.mergeObjects({"a": 1, "b": 2}, {"b": 3, "c": 4});
+			assert.deepEqual(expected, actual);
+		});
 
 		i++;
 		it(`${i}: partitionArray - Should return array partitioned based on condition (item > 2)`, function() {
@@ -218,9 +301,9 @@ describe("Tests", function() {
 			let actual = helpful.partitionArray([1, 2, 3, 4], n => n > 2);
 			assert.deepEqual(expected, actual);
 		});
-
+    
 		i++;
-		it(`${i}: partitionArray - Should return array partitioned based on condition  (item = true)`, function() {
+    it(`${i}: partitionArray - Should return array partitioned based on condition  (item = true)`, function() {
 			let expected = [[1, 2, 3, 4], []];
 			let actual = helpful.partitionArray([1, 2, 3, 4], n => true);
 			assert.deepEqual(expected, actual);

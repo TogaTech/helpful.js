@@ -4,7 +4,7 @@
 	} else if (typeof module === 'object' && module.exports) {
 		module.exports = factory();
 	} else {
-		root.returnExports = factory();
+		root.helpful = factory();
 	}
 }(typeof self !== 'undefined' ? self : this, function() {
 	const helpful = {};
@@ -126,7 +126,7 @@
 	}
 
 	helpful.pad = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -136,7 +136,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const leftPad = getPadString(delimiter, Math.floor(availableChars / 2));
@@ -145,7 +145,7 @@
 	}
 
 	helpful.padStart = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -155,7 +155,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const pad = getPadString(delimiter, availableChars);
@@ -163,7 +163,7 @@
 	}
 
 	helpful.padEnd = function(string, size, delimiter = " ") {
-		if (string == null) {
+		if(string == null) {
 			return "";
 		}
 		if(size == null) {
@@ -173,7 +173,7 @@
 			delimiter = " ";
 		}
 		const availableChars = size - string.length;
-		if (availableChars <= 0) {
+		if(availableChars <= 0) {
 			return string;
 		}
 		const pad = getPadString(delimiter, availableChars);
@@ -212,7 +212,7 @@
   helpful.flattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...item);
 			} else {
@@ -225,7 +225,7 @@
 	helpful.deepFlattenArray = function(array) {
 		let res = [];
 		for(let i = 0; i < array.length; i++) {
-      let item = array[i];
+      		let item = array[i];
 			if(Array.isArray(item)) {
 				res.push(...this.deepFlattenArray(item));
 			} else {
@@ -235,7 +235,98 @@
 		return res;
 	}
 
-	helpful.partitionArray = function(array, callback) {
+	const getPadArray = function(delimiter, size) {
+		return [].concat.apply([], Array(size).fill(delimiter)).slice(0, size);
+	}
+
+	helpful.padArray = function(array, size, delimiter) {
+		if(array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if(availableSpaces <= 0) {
+			return array;
+		}
+		const leftPad = getPadArray(delimiter, Math.floor(availableSpaces / 2));
+		const rightPad = getPadArray(delimiter, Math.ceil(availableSpaces / 2));
+		return [ ...leftPad, ...array, ...rightPad ];
+	}
+
+	helpful.padArrayStart = function(array, size, delimiter) {
+		if(array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if(availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...pad, ...array ];
+	}
+
+	helpful.padArrayEnd = function(array, size, delimiter) {
+		if(array === null) {
+			return [];
+		}
+		const availableSpaces = size - array.length;
+		if(availableSpaces <= 0) {
+			return array;
+		}
+		const pad = getPadArray(delimiter, availableSpaces);
+		return [ ...array, ...pad ];
+	}
+
+	const escapedChars = [
+		{character: "&", replacement: "&amp;"},
+		{character: "<", replacement: "&lt;"},
+		{character: ">", replacement: "&gt;"},
+		{character: "\"", replacement: "&quot;"},
+		{character: "'", replacement: "&#39;"},
+	]
+
+	helpful.escape = function(string) {
+		if(string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		for(let i = 0; i < escapedChars.length; i++) {
+			result = result.replace(new RegExp(escapedChars[i].character, "g"), escapedChars[i].replacement);
+		}
+		return result;
+	}
+
+	helpful.unescape = function(string) {
+		if(string === null || typeof string !== 'string') {
+			return string;
+		}
+		let result = string;
+		// Should unescape `&` character for last
+		for(let i = escapedChars.length - 1; i >= 0; i--) {
+			result = result.replace(new RegExp(escapedChars[i].replacement, "g"), escapedChars[i].character);
+		}
+		return result;
+	}
+
+	helpful.mergeObjects = function(object1, object2) {
+		if(object1 === null) {
+			return object2;
+		}
+		if(object2 === null) {
+			return object1;
+		}
+		let keys1 = Object.keys(object1);
+		let keys2 = Object.keys(object2);
+		let returnObject = {};
+		for(let i = 0; i < keys2.length; i++) {
+			returnObject[keys2[i]] = object2[keys2[i]];
+		}
+		for(let i = 0; i < keys1.length; i++) {
+			returnObject[keys1[i]] = object1[keys1[i]];
+		}
+		return returnObject;
+  }
+  
+  helpful.partitionArray = function(array, callback) {
 		let pass = [];
 		let notPass = [];
 		pass = array.filter(function(item){

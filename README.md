@@ -362,10 +362,7 @@ console.log(array2); // Array(4) ["*", "*", "*", "*"]
 **Return Type:** Array (`Array(7) [1, 1, 1, 1, 1, 1, 1]`)
 
 **Side Effects:**
-The original array object passed as a parameter is filled directly.
-The same array is returned again for convenience,
-but the return value does not need to be stored
-if the original array is already stored.
+The original array object passed as a parameter is filled directly. The same array is returned again for convenience, but the return value does not need to be stored if the original array is already stored.
 
 ### flattenArray
 Flattens an array
@@ -389,6 +386,85 @@ let deepFlattenedArray3 = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]
 - array: Array (`[[0, 1], [2, [3, 4]]]`)
 
 **Return Type:** Array (`Array(5) [0, 1, 2, 3, 4]`)
+
+### padArray
+Pads an array adding elements on the left and right side of it until the array reaches a certain size
+
+Padding is added evenly on both sides, but if there is an odd number of padding elements, the extra padding element is added to the end of the array. The default padding element is `undefined`.
+```javascript
+let array1 = helpful.padArray(["t", "e", "s", "t"], 8, ["*"]); // Array(8) ["*", "*", "t", "e", "s", "t", "*", "*"]
+let array2 = helpful.padArray(["t", "e", "s", "t"], 8); // Array(8) [undefined, undefined, "t", "e", "s", "t", undefined, undefined]
+let array3 = helpful.padArray(["t", "e", "s", "t"], 9, ["*"]); // Array(9) ["*", "*", "t", "e", "s", "t", "*", "*", "*"]
+let array4 = helpful.padArray(["t", "e", "s", "t"], 11, ["_", "a", "_", "-"]); // Array(11) ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_", "-"]
+let array5 = helpful.padArray(["t", "e", "s", "t"], 10, ["_", "a", "_", "-"]); // Array(10) ["_", "a", "_", "t", "e", "s", "t", "_", "a", "_"]
+```
+**Parameters:**
+- array: array (`["t", "e", "s", "t"]`)
+- number: size (`8`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t" "*", "*"]`)
+
+### padArrayStart
+Pads an array by adding elements on the left side of it until the array reaches a certain size
+```javascript
+let array = helpful.padArrayStart(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["*", "*", "t", "e", "s", "t"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["*", "*", "t", "e", "s", "t"]`)
+
+### padArrayEnd
+Pads an array by adding elements on the right side of it until the array reaches a certain size
+```javascript
+let array = helpful.padArrayEnd(["t", "e", "s", "t"], 6, ["*"]); // Array(6) ["t", "e", "s", "t", "*", "*"]
+```
+**Parameters:**
+- array: array (`"test"`)
+- number: size (`6`)
+- array: delimiter (`["*"]`)
+
+**Return Type:** Array (`["t", "e", "s", "t", "*", "*"]`)
+
+### escape
+Escapes HTML characters in a string by replacing them with their HTML entities
+
+Escaped characters: `&`, `<` , `>`, `"`, `'`.
+```javascript
+let escaped = helpful.escape("<p>"); // "&lt;p&gt;"
+```
+**Parameters:**
+- escaped: string (`"<p>"`)
+
+**Return Type:** string (`"&lt;p&gt;"`)
+
+### unescape
+Reverses escaped HTML characters in a string by replacing them with their HTML entities
+```javascript
+let unescaped1 = helpful.unescape("&lt;p&gt;"); // "<p>"
+let unescaped2 = helpful.unescape("&amp;lt;p&amp;gt;"); // "&lt;p&gt;"
+```
+**Parameters:**
+- unescaped: string (`"&lt;p&gt;"`)
+
+**Return Type:** string (`"<p>"`)
+
+### mergeObjects
+Merges two objects together into one object
+
+In the case where both objects contain an identical key, the first object takes precedence.
+```javascript
+let merged1 = helpful.mergeObjects({"a": 1}, {"b": 2}); // {"a": 1, "b": 2}
+let merged2 = helpful.mergeObjects({"a": 1, "b": 2}, {"b": 3, "c": 4}); // {"a": 1, "b": 2, "c": 4}
+```
+**Parameters:**
+- object1: object (`{"a": 1}`)
+- object2: object (`{"b": 2}`)
+
+**Return Type:** object (`{"a": 1, "b": 2}`)
 
 ### partitionArray
  Partitions an array
