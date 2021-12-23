@@ -324,6 +324,18 @@
 			returnObject[keys1[i]] = object1[keys1[i]];
 		}
 		return returnObject;
+  }
+  
+  helpful.partitionArray = function(array, callback) {
+		let pass = [];
+		let notPass = [];
+		pass = array.filter(function(item){
+			return callback(item);
+		});
+		notPass = array.filter(function(item){
+			return !callback(item);
+		});
+		return [pass, notPass];
 	}
 
 	helpful.hex = {};

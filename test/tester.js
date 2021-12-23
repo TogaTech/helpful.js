@@ -212,8 +212,7 @@ describe("Tests", function() {
 			let actual = helpful.deepFlattenArray([[0, 1], [2, [3, 4, [5, [6]]]]]);
 			assert.deepEqual(expected, actual);
 		});
-
-		i++;
+    
 		it(`${i}: padArray - Should default pad an array with undefined`, function () {
 			let expected = [undefined, undefined, "t", "e", "s", "t", undefined, undefined];
 			let actual = helpful.padArray(["t", "e", "s", "t"], 8);
@@ -289,11 +288,31 @@ describe("Tests", function() {
 			let actual = helpful.mergeObjects({"a": 1}, {"b": 2});
 			assert.deepEqual(expected, actual);
 		});
-
-		i++;
+      
 		it(`${i}: mergeObjects - Should merge two objects, giving the first object's keys precedence`, function () {
 			let expected = {"a": 1, "b": 2, "c": 4};
 			let actual = helpful.mergeObjects({"a": 1, "b": 2}, {"b": 3, "c": 4});
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: partitionArray - Should return array partitioned based on condition (item > 2)`, function() {
+			let expected = [[3, 4], [1, 2]];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => n > 2);
+			assert.deepEqual(expected, actual);
+		});
+    
+		i++;
+    it(`${i}: partitionArray - Should return array partitioned based on condition  (item = true)`, function() {
+			let expected = [[1, 2, 3, 4], []];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => true);
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: partitionArray - Should return array partitioned based on condition (item = false)`, function() {
+			let expected = [[], [1, 2, 3, 4]];
+			let actual = helpful.partitionArray([1, 2, 3, 4], n => false);
 			assert.deepEqual(expected, actual);
 		});
 
