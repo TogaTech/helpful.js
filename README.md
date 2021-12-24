@@ -475,7 +475,7 @@ let partitionArray3 = helpful.partitionArray([1, 2, 3, 4, 5], n => false); // Ar
 ```
 **Parameters:**
 - array: Array (`[1, 2, 3, 4, 5]`)
-- function: Function(`n => n > 2`)
+- func: function(`n => n > 2`)
 
 **Return Type:** Array (`Array(2) [[3, 4, 5], [1, 2]]`)
 

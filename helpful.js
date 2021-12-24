@@ -86,14 +86,14 @@
 	}
 
 	helpful.average = function(array) {
-		if(array == null ) {
+		if(array == null) {
 			return [];
 		}
 		let sum = 0;
 		for(let i = 0; i < array.length; i++) {
 			sum += array[i];
 		}
-		let average = sum / array.length ;
+		let average = sum / array.length;
 		return average;
 	}
 
@@ -103,7 +103,7 @@
 		}
 		let result = [];
 		let copy = array.slice();
-		while( copy.length ){
+		while(copy.length) {
 			result.push(...copy.splice(Math.floor(Math.random() * copy.length), 1));
 		}
 		return result;
@@ -115,7 +115,7 @@
 		}
 		let result = [];
 		let copy = array.slice();
-		while( copy.length ){
+		while(copy.length) {
 			result.unshift(copy.shift());
 		}
 		return result;
@@ -326,14 +326,14 @@
 		return returnObject;
   }
   
-  helpful.partitionArray = function(array, callback) {
+  helpful.partitionArray = function(array, func) {
 		let pass = [];
 		let notPass = [];
-		pass = array.filter(function(item){
-			return callback(item);
+		pass = array.filter(function(item) {
+			return func(item);
 		});
-		notPass = array.filter(function(item){
-			return !callback(item);
+		notPass = array.filter(function(item) {
+			return !func(item);
 		});
 		return [pass, notPass];
 	}
