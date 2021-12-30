@@ -467,7 +467,7 @@ let merged2 = helpful.mergeObjects({"a": 1, "b": 2}, {"b": 3, "c": 4}); // {"a":
 **Return Type:** object (`{"a": 1, "b": 2}`)
 
 ### partitionArray
- Partitions an array
+Partitions an array
 ```javascript
 let partitionArray1 = helpful.partitionArray([1, 2, 3, 4], n => n > 2); // Array(2) [[3, 4], [1, 2]]
 let partitionArray2 = helpful.partitionArray([1, 2, 3, 4, 5], n => true); // Array(2) [[1, 2, 3, 4, 5], []]
@@ -478,6 +478,41 @@ let partitionArray3 = helpful.partitionArray([1, 2, 3, 4, 5], n => false); // Ar
 - func: function(`n => n > 2`)
 
 **Return Type:** Array (`Array(2) [[3, 4, 5], [1, 2]]`)
+
+
+### duplicateObject
+Duplicate an object
+``` javascript
+let duplicate = helpful.duplicateObject({a: 'a', b: 2, c: true, d: null}) // {a: 'a', b: 2, c: true, d: null}
+```
+
+**Parameters:**
+- object: object (`{a: 'a', b: 2, c: true, d: null}`)
+
+**Return Type:** object (`{a: 'a', b: 2, c: true, d: null}`)
+
+### deepDuplicateObject
+Duplicate an object and all inner objects and arrays
+``` javascript
+let deepDuplicate = helpful.deepDuplicateObject({a: 1, f: {g: ['h']}}) // {a: 1, f: {g: ['h']}}
+```
+
+**Parameters:**
+- object: object (`{a: 1, f: {g: ['h']}}`)
+
+**Return Type:** object (`{a: 1, f: {g: ['h']}}`)
+
+### deepDuplicateArray
+Duplicate an array and all inner objects and arrays
+``` javascript
+let deepDuplicate = helpful.deepDuplicateArray([1, {b: [2]}]) // [1, {b: [2]}]
+```
+
+**Parameters:**
+- array: array (`[1, {b: [2]}]`)
+
+**Return Type:** array (`[1, {b: [2]}]`)
+
 
 ## Hex
 
