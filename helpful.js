@@ -358,28 +358,23 @@
 		} else {
 			newEle = oldEle
 		}
-
 		return newEle;
 	}
 
 	helpful.deepDuplicateObject = function (object) {
 		let keys = Object.keys(object);
 		let newObject = {};
-
 		for (const key of keys) {
 			newObject[key] = typeCheck(object[key], newObject[key]);
 		}
-
 		return {...newObject};
 	}
 
 	helpful.deepDuplicateArray = function (array) {
 		let newArray = [];
-
 		for (let i = 0; i < array.length; i++) {
 			newArray[i] = typeCheck(array[i], newArray[i]);
 		}
-
 		return [...newArray];
 	}
 
