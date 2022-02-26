@@ -338,6 +338,19 @@
 		return [pass, notPass];
 	}
 
+	helpful.partitionObject = function (obj, func) {
+		let obj1 = {};
+		let obj2 = {};
+		for(let key in obj) {
+			if (func(key, obj[key])) {
+				obj1[key] = obj[key];
+			}else {
+				obj2[key] = obj[key];
+			}
+		}
+		return [obj1, obj2];
+	}
+
 	helpful.hex = {};
 
 	/* Modified from https://github.com/TogaTech/tEnvoy  */
