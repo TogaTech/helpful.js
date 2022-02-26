@@ -318,6 +318,21 @@ describe("Tests", function() {
 			assert.deepEqual(expected, actual);
 		});
 
+		i++;
+		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
+			let expected = [{"a": 1}, {"b": 2, "c": 3, "d": 4}];
+			let actual = helpful.partitionObject({"a": 1, "b": 2, "c": 3, "d": 4}, (key, value) => key == "a");
+			;
+			assert.deepEqual(expected, actual);
+		});
+
+		i++;
+		it(`${i}: PartitionObject - Should partition an object based on a certain condition`, function() {
+			let expected = [{"c": 3, "d": 4}, {"a": 1, "b": 2}];
+			let actual = helpful.partitionObject({"a": 1, "b": 2, "c": 3, "d": 4}, (key, value) => value > 2);
+			assert.deepEqual(expected, actual);
+		})
+
 	});
 	describe("Hex", function() {
 		let i = 0;
